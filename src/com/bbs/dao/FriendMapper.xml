@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbs.dao.FriendDao">
+  <resultMap id="BaseResultMap" type="com.bbs.entity.Friend">
+    <id column="FRIEND_ID" jdbcType="DECIMAL" property="friendId" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="FRI_ID" jdbcType="DECIMAL" property="friId" />
+    <result column="FRI_REMARK" jdbcType="VARCHAR" property="friRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    FRIEND_ID, USER_ID, FRI_ID, FRI_REMARK
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BBS.BBS_FRIEND
+    where FRIEND_ID = #{friendId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from BBS.BBS_FRIEND
+    where FRIEND_ID = #{friendId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.bbs.entity.Friend">
+    insert into BBS.BBS_FRIEND (FRIEND_ID, USER_ID, FRI_ID, 
+      FRI_REMARK)
+    values (#{friendId,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, #{friId,jdbcType=DECIMAL}, 
+      #{friRemark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bbs.entity.Friend">
+    insert into BBS.BBS_FRIEND
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="friendId != null">
+        FRIEND_ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="friId != null">
+        FRI_ID,
+      </if>
+      <if test="friRemark != null">
+        FRI_REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="friendId != null">
+        #{friendId,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="friId != null">
+        #{friId,jdbcType=DECIMAL},
+      </if>
+      <if test="friRemark != null">
+        #{friRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bbs.entity.Friend">
+    update BBS.BBS_FRIEND
+    <set>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="friId != null">
+        FRI_ID = #{friId,jdbcType=DECIMAL},
+      </if>
+      <if test="friRemark != null">
+        FRI_REMARK = #{friRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where FRIEND_ID = #{friendId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bbs.entity.Friend">
+    update BBS.BBS_FRIEND
+    set USER_ID = #{userId,jdbcType=DECIMAL},
+      FRI_ID = #{friId,jdbcType=DECIMAL},
+      FRI_REMARK = #{friRemark,jdbcType=VARCHAR}
+    where FRIEND_ID = #{friendId,jdbcType=DECIMAL}
+  </update>
+</mapper>

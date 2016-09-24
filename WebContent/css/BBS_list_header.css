@@ -1,0 +1,203 @@
+body{
+    margin: 0;
+    padding: 0;
+    font: 12px/1.5 Microsoft YaHei,Tahoma,Helvetica,'SimSun',sans-serif;
+    color: #000000;
+}
+#container .header{
+    height: 175px;
+    width: 100%;
+    padding: 10px 0 0 0;
+}
+#downloadAppTest {
+    width: 54px;
+    height: 21px;
+    color: #fc7050;
+    font-weight: normal;
+    position: relative;
+    display: block;
+    left: 193px;
+    bottom: 62px;
+    background-image: url("../images/list/header_imghack%20(3).png");
+    padding-left: 29px;
+    line-height: 21px;
+    font-family: "Microsoft YaHei", Tahoma, Helvetica, SimSun, sans-serif;
+    font-size: 12px;
+}
+#QRCodeTest {
+    position: absolute;
+    left: 0px;
+    bottom: -212px;
+    border: 1px solid #f26c4f;
+    text-align: center;
+    font-size: 14px;
+    color: #fc7050;
+    z-index: 999;
+    background-color: #fff;
+    padding: 12px;
+}
+#um {
+    float: right;
+    padding-right: 0;
+    padding-top: 21px;
+    color: #7c7c7c;
+    line-height: 2.3;
+    zoom: 1;
+    padding-right:20px;
+}
+#um a{
+    color: #7c7c7c;
+    text-decoration: none;
+}
+#um .p {
+    float: right;
+}
+#um .p .hd_di1 {
+    display: inline-block;
+    float: left;
+    padding-right: 10px
+}
+.arrowup {
+    position: absolute;
+    background: url("../images/list/imghack.png") no-repeat -80px -80px;
+    display: inline-block;
+    height: 7px;
+    width: 14px;
+    margin: -15px 0px 0 53px;
+}
+#topic_lists {
+    position: absolute;
+    z-index: 12;
+}
+#topic_lists ul {
+    width: 118px;
+    position: absolute;
+    z-index: 15;
+    left: -33px;
+    top: -3px;
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+}
+#topic_lists .hd_pop{
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    -webkit-box-shadow: 0px 4px 6px -4px gray;
+    -moz-box-shadow: 0px 4px 6px -4px gray;
+    box-shadow: 0px 4px 6px -4px gray;
+}
+#topic_lists ul {
+    width: 118px;
+    position: absolute;
+    z-index: 10;
+    left: -33px;
+    top: -38px;
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+}
+.uinfo_t_bg{
+    font-size: 15px;
+    padding-left: 15px;
+}
+ul {
+    list-style: none;
+}
+.uinfo_t_bg {
+    border-radius: 5px 5px 0 0;
+    height: 39px;
+    border-bottom: 1px solid #d1d1d1;
+    background-color: #f8f8f8;
+}
+#topic_lists li a {
+    color: #5a5a5a;
+}
+.hd_pop .hd_first_content_li a {
+    padding-top: 12px;
+}
+.hd_pop li a {
+    display: block;
+    padding: 6px 0 6px;
+    text-align: center;
+    line-height: 17px;
+}
+#um .p .hd_di1 .switchwidth {
+    background: url("../images/list/header_imghack%20(1).png") no-repeat -22px 5px transparent;
+    width: 20px;
+    height: 22px;
+    display: inline-block;
+    background-position: 0px 5px;
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+}
+#searchbar {
+    background: url("../images/list/header_imghack%20(4).png") no-repeat 0 0 transparent;
+    width: 339px;
+    float: right;
+    height: 30px;
+    margin-top: 7px;
+}
+#scbar_txt {
+    color: #606060;
+    width: 290px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 4px 0 0 10px;
+    height: 24px;
+    line-height: 24px;
+}
+#scbar_submit {
+    border: none;
+    float: right;
+    width: 20px;
+    height: 27px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    margin-right: 12px;
+}
+#nv{
+    height: 48px;
+    width: 100%;
+    background-color: #fc7050;
+    position:relative;
+    top:0;
+    z-index:10;
+}
+#qmenu {
+    float: right;
+    display: inline;
+    margin: 18px 0 0 0;
+    padding-right: 25px;
+    width: 13px;
+    height: 12px;
+    background: url(../images/homepage/imghack.png) no-repeat -58px -75px transparent;
+    line-height: 24px;
+    text-align: center;
+    color: #369;
+    font-weight: 700;
+    overflow: hidden;
+}
+#nv ul{
+    list-style: none;
+    height: 48px;
+    margin: 0px;
+}
+#nv ul li{
+    float: left;
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+    list-style: none;
+}
+#nv ul li a{
+    margin-left: 0px;
+    padding: 0 16px;
+    color: white;
+    text-decoration: none;
+}
+#nv ul li span{
+    display: none;
+}

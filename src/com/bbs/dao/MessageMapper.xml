@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbs.dao.MessageDao">
+  <resultMap id="BaseResultMap" type="com.bbs.entity.Message">
+    <id column="MSG_ID" jdbcType="DECIMAL" property="msgId" />
+    <result column="RECEIVER_ID" jdbcType="DECIMAL" property="receiverId" />
+    <result column="MSG_CONTENT" jdbcType="VARCHAR" property="msgContent" />
+    <result column="MSG_STATE" jdbcType="VARCHAR" property="msgState" />
+    <result column="CREATE_TIME" jdbcType="DATE" property="createTime" />
+    <result column="POST_ID" jdbcType="DECIMAL" property="postId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MSG_ID, RECEIVER_ID, MSG_CONTENT, MSG_STATE, CREATE_TIME, POST_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BBS.BBS_MSG
+    where MSG_ID = #{msgId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from BBS.BBS_MSG
+    where MSG_ID = #{msgId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.bbs.entity.Message">
+    insert into BBS.BBS_MSG (MSG_ID, RECEIVER_ID, MSG_CONTENT, 
+      MSG_STATE, CREATE_TIME, POST_ID
+      )
+    values (#{msgId,jdbcType=DECIMAL}, #{receiverId,jdbcType=DECIMAL}, #{msgContent,jdbcType=VARCHAR}, 
+      #{msgState,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{postId,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bbs.entity.Message">
+    insert into BBS.BBS_MSG
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="msgId != null">
+        MSG_ID,
+      </if>
+      <if test="receiverId != null">
+        RECEIVER_ID,
+      </if>
+      <if test="msgContent != null">
+        MSG_CONTENT,
+      </if>
+      <if test="msgState != null">
+        MSG_STATE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="postId != null">
+        POST_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="msgId != null">
+        #{msgId,jdbcType=DECIMAL},
+      </if>
+      <if test="receiverId != null">
+        #{receiverId,jdbcType=DECIMAL},
+      </if>
+      <if test="msgContent != null">
+        #{msgContent,jdbcType=VARCHAR},
+      </if>
+      <if test="msgState != null">
+        #{msgState,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="postId != null">
+        #{postId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bbs.entity.Message">
+    update BBS.BBS_MSG
+    <set>
+      <if test="receiverId != null">
+        RECEIVER_ID = #{receiverId,jdbcType=DECIMAL},
+      </if>
+      <if test="msgContent != null">
+        MSG_CONTENT = #{msgContent,jdbcType=VARCHAR},
+      </if>
+      <if test="msgState != null">
+        MSG_STATE = #{msgState,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="postId != null">
+        POST_ID = #{postId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where MSG_ID = #{msgId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bbs.entity.Message">
+    update BBS.BBS_MSG
+    set RECEIVER_ID = #{receiverId,jdbcType=DECIMAL},
+      MSG_CONTENT = #{msgContent,jdbcType=VARCHAR},
+      MSG_STATE = #{msgState,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=DATE},
+      POST_ID = #{postId,jdbcType=DECIMAL}
+    where MSG_ID = #{msgId,jdbcType=DECIMAL}
+  </update>
+</mapper>

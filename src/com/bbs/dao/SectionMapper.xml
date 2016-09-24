@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbs.dao.SectionDao">
+  <resultMap id="SectionResultMap" type="com.bbs.entity.Section">
+    <id column="SECTION_ID" jdbcType="DECIMAL" property="sectionId" />
+    <result column="SECTION_NOTICE" jdbcType="VARCHAR" property="sectionNotice" />
+    <result column="SECTION_NAME" jdbcType="VARCHAR" property="sectionName" />
+    <collection property="theme" resultMap="ThemeResultMap"></collection>
+  </resultMap>
+  <resultMap id="ThemeResultMap" type="com.bbs.entity.Theme">
+    <id column="THEME_ID" jdbcType="DECIMAL" property="themeId" />
+    <result column="THEME_NAME" jdbcType="VARCHAR" property="themeName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    SECTION_ID, SECTION_NOTICE, SECTION_NAME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="SectionResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BBS.BBS_SECTION
+    where SECTION_ID = #{sectionId,jdbcType=DECIMAL}
+  </select>
+  <select id="getSection1" resultMap="SectionResultMap">
+  select *from bbs_section where section_id = 1
+  </select>
+  <select id="getSection2" resultMap="SectionResultMap">
+  select *from bbs_section where section_id = 2
+  </select>
+  <select id="getSection3" resultMap="SectionResultMap">
+  select *from bbs_section where section_id = 3
+  </select>
+  <select id="getSection4" resultMap="SectionResultMap">
+  select *from bbs_section where section_id = 4
+  </select>
+  <select id="getSection5" resultMap="SectionResultMap">
+  select *from bbs_section where section_id = 5
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from BBS.BBS_SECTION
+    where SECTION_ID = #{sectionId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.bbs.entity.Section">
+    insert into BBS.BBS_SECTION (SECTION_ID, SECTION_NOTICE, SECTION_NAME
+      )
+    values (#{sectionId,jdbcType=DECIMAL}, #{sectionNotice,jdbcType=VARCHAR}, #{sectionName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bbs.entity.Section">
+    insert into BBS.BBS_SECTION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sectionId != null">
+        SECTION_ID,
+      </if>
+      <if test="sectionNotice != null">
+        SECTION_NOTICE,
+      </if>
+      <if test="sectionName != null">
+        SECTION_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sectionId != null">
+        #{sectionId,jdbcType=DECIMAL},
+      </if>
+      <if test="sectionNotice != null">
+        #{sectionNotice,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionName != null">
+        #{sectionName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bbs.entity.Section">
+    update BBS.BBS_SECTION
+    <set>
+      <if test="sectionNotice != null">
+        SECTION_NOTICE = #{sectionNotice,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionName != null">
+        SECTION_NAME = #{sectionName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SECTION_ID = #{sectionId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bbs.entity.Section">
+    update BBS.BBS_SECTION
+    set SECTION_NOTICE = #{sectionNotice,jdbcType=VARCHAR},
+      SECTION_NAME = #{sectionName,jdbcType=VARCHAR}
+    where SECTION_ID = #{sectionId,jdbcType=DECIMAL}
+  </update>
+</mapper>

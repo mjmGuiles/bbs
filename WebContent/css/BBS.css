@@ -1,0 +1,395 @@
+body {
+    background: #FFF none !important;
+}
+body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc {
+    margin: 0;
+    padding: 0;
+}
+body, input, button, select, textarea {
+    font: 12px/1.5 Microsoft YaHei,Tahoma,Helvetica,'SimSun',sans-serif;
+    color: #444;
+}
+* {
+    word-wrap: break-word;
+}
+body {
+    display: block;
+}
+#ajaxwaitid {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding: 0 5px;
+    background: #D00;
+    color: #FFF;
+}
+#toptb, #ct {
+    width: 960px;
+    margin: 0 auto;
+}
+#toptb {
+    background: transparent;
+    border: none;
+    padding: 0 15px;
+    min-width: 960px;
+    line-height: 28px;
+}
+.cl {
+    zoom: 1;
+}
+.z {
+    float: left;
+}
+#toptb a.showmenu {
+    padding-right: 15px;
+}
+#toptb a {
+    color: #7c7c7c !important;
+    float: left;
+    padding: 0 4px;
+    height: 28px;
+}
+.showmenu {
+    background: url(../images/yessearch/scr_arrow_down.png) no-repeat 90% 50% !important;
+    cursor: pointer;
+    white-space: nowrap;
+}
+a {
+    color: #8F8F8F;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+.y {
+    float: right;
+}
+strong, b {
+    font-weight: bold;
+}
+#toptb a.showmenu {
+    padding-right: 15px;
+}
+.cl:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#nv_search .p_pop {
+    box-shadow: 0px 4px 4px #e0e0e0;
+    border-radius: 0px 0px 5px 5px;
+    top: 0px;
+}
+#nv_search .h_pop {
+    min-width: 0px;
+}
+#mn_userapp_menu {
+    clear: left;
+    min-height: 210px;
+    min-width: 630px;
+}
+.p_pop {
+    border-radius: 5px;
+}
+.h_pop {
+    min-width: 120px;
+    border-top: none;
+}
+.p_pop, .p_pof, .sllt {
+    padding: 4px;
+    border: 1px solid;
+    min-width: 60px;
+    border-color: #DDD;
+    background: #FEFEFE;
+    -webkit-box-shadow: 0px 6px 24px -4px gray;
+    -moz-box-shadow: 0px 6px 24px -4px gray;
+    box-shadow: 0px 6px 24px -4px gray;
+}
+.p_pop li {
+    display: inline;
+}
+ul li, .xl li {
+    list-style: none;
+}
+#nv_search .p_pop li a {
+    color: #909090;
+}
+#myspace_menu li a, #navs_menu li a {
+    background-repeat: no-repeat;
+    background-position: -200px 0;
+}
+.p_pop a {
+    display: block;
+    padding: 3px 5px;
+    border-bottom: 1px solid #FFFFFF;
+    white-space: nowrap;
+}
+.p_pop li:last-child a {
+    border: none;
+}
+#toptb, #ct {
+    width: 960px;
+    margin: 0 auto;
+}
+.mw {
+    width: 100%;
+    float: none;
+}
+#scform {
+    margin: 10px 0;
+}
+.mbm {
+    margin-bottom: 10px !important;
+}
+table {
+    empty-cells: show;
+    border-collapse: collapse;
+}
+#scform h1 {
+    margin-right: 20px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+}
+.searchform a {
+    color: #909090;
+}
+#scform_tb .a {
+    background: transparent;
+    color: #fc7050;
+    font-weight: 700;
+    float: left;
+    display: inline;
+    margin: 0 15px 0 3px;
+    height: 26px;
+    line-height: 26px;
+}
+#scform_tb a {
+    float: left;
+    display: inline;
+    margin: 0 15px 0 3px;
+    height: 26px;
+    line-height: 26px;
+}
+#scform_form {
+    background: transparent;
+}
+table {
+    empty-cells: show;
+    border-collapse: collapse;
+}
+#scform .td_srchtxt {
+    background: transparent;
+}
+#scform .td_srchtxt input {
+    margin-right: 5px;
+}
+#scform_srchtxt {
+    border: 2px solid #fc7050;
+    border-radius: 5px;
+    height: 46px;
+    padding: 0 10px;
+    width: 460px;
+    background: transparent;
+    outline: none;
+}
+.xg1, .xg1 a {
+    color: #999 !important;
+}
+#scform .td_srchbtn {
+    background: url(../images/yessearch/search_btn.png) no-repeat;
+}
+#scform_submit {
+    height: 38px;
+    width: 60px;
+}
+#scform_submit {
+    opacity: 0;
+    cursor: pointer;
+}
+.miui_ckb {
+    width: 15px;
+    height: 15px;
+    background: url(../images/yessearch/imghack.png) 0 0 no-repeat transparent;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 3px;
+    top: 3px;
+}
+.sttl {
+    margin: 20px 0px;
+    background: transparent;
+    border-top: 2px solid #efefef;
+    border-bottom: 1px solid #f1f1f1;
+    border-radius: 5px;
+    height: 34px;
+    line-height: 34px;
+    padding: 5px;
+}
+.mbn {
+    margin-bottom: 5px !important;
+}
+.sttl h2 {
+    font-weight: normal;
+    color: #909090;
+}
+em, cite, i {
+    font-style: normal;
+}
+.sttl .emfont, .s_re_nums {
+    color: #f06a1c !important;
+}
+#threadlist {
+    border: 0px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+.slst {
+    width: 760px;
+}
+.mtw {
+    margin-top: 20px !important;
+}
+#threadlist .pbw {
+    margin-bottom: 15px;
+}
+.pbw {
+    padding-bottom: 20px !important;
+}
+.xs3 {
+    font-size: 16px !important;
+}
+.slst .xs3 a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.slst a:visited {
+    color: purple;
+}
+.slst a strong {
+    font-weight: 400;
+}
+.xg1, .xg1 a {
+    color: #999 !important;
+}
+.slst p span, .slst p span a {
+    color: #aeaeae;
+}
+.s_re {
+    background: url(../images/yessearch/reply_nums.png) no-repeat 0px 2px;
+}
+.s_vi {
+    background: url(../images/yessearch/view_nums.png) no-repeat 0px 2px;
+}
+.s_re_nums1 {
+    display: inline-block;
+    padding-left: 17px;
+    font-weight: bold;
+    margin: 3px 0px;
+}
+.pbw p {
+    color: #7c7c7c;
+}
+.search_msg {
+    margin: 3px 0px;
+}
+.slst a {
+    text-decoration: underline;
+    font-weight: 400;
+}
+.pg {
+    float: none;
+}
+.pg, .pgb {
+    line-height: 26px;
+    font-size: 12px;
+}
+.pg strong, .pspan {
+    color: black;
+    height: 26px;
+}
+.pg strong, .pspan {
+    background-color: transparent;
+    font-weight: bold;
+    border: none;
+}
+.pg strong, .pspan {
+    border-radius: 4px;
+    float: left;
+    display: inline;
+    margin-left: 4px;
+    padding: 0 10px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-decoration: none;
+}
+.pg a, .pgb a, .pg label {
+    border-radius: 4px;
+    float: left;
+    display: inline;
+    margin-left: 4px;
+    padding: 0 10px;
+    height: 26px;
+    border: 1px solid #ebebeb;
+    background: #fbfbfb;
+    color: #909090;
+    overflow: hidden;
+    text-decoration: none;
+}
+.pg label {
+    cursor: text;
+}
+.pg label .px {
+    padding: 0;
+    width: 25px;
+    height: 16px;
+    line-height: 16px;
+}
+.pg input {
+    text-align: center;
+}
+.px, .pt, .ps, select {
+    border: 1px solid;
+    border-color: #848484 #E0E0E0 #E0E0E0 #848484;
+    background: #FFF url(../images/yessearch/px.png) repeat-x 0 0;
+}
+pg a.nxt {
+    padding-right: 10px;
+}
+.pg a.nxt, .pgb a {
+    padding: 0 10px;
+}
+#nv_search #ft {
+    text-align: center;
+}
+#ft {
+    padding: 21px 0 23px;
+    border-top: 1px solid #CDCDCD;
+    line-height: 1.8;
+    color: #7E7E7E;
+    background-color: #2F2F2F;
+}
+#flk {
+    text-align: center;
+    font-size: 12px;
+}
+.sfooter {
+    width: 960px;
+    margin: 0 auto;
+}
+#flk img {
+    vertical-align: middle;
+}
+#flk a {
+    color: #cdcdcd;
+}
+.pipe {
+    margin: 0 5px;
+    color: #CCC;
+}

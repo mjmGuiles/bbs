@@ -1,0 +1,446 @@
+@CHARSET "UTF-8";
+html, body {
+    height: 100%;
+}
+body {
+    background: #f9f9f9;
+    color: #666;
+    display: block;
+    font-size: 12px;
+    font-family: arial,"Hiragino Sans GB", "Microsoft YaHei","微軟正黑體","儷黑 Pro", sans-serif;
+}
+html, body, h1, h2, h3, h4, h5, h6, blockquote, p, pre, dl, dd, ol, ul, li, a, span, caption, th, td, form, fieldset, legend, input, button, textarea, address {
+    margin: 0;
+    padding: 0;
+}
+.loadingmask {
+    animation: rotate-loading 1.5s linear infinite;
+    width: 50px !important;
+    height: 50px !important;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    background-repeat: no-repeat;
+    background-image: url(../images/account/download.png);
+}
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+.blockimportant {
+    display: block !important;
+}
+.wrap {
+    padding-bottom: 80px;
+}
+.blockimportant .bugfix_ie6 {
+    padding-bottom: 0;
+}
+.blockimportant .layout {
+    width: 960px;
+}
+.bugfix_ie6, .n-account-area-box {
+    display: block;
+}
+.bugfix_ie6 {
+    position: relative;
+    z-index: 4;
+}
+.layout {
+    margin: 0 auto;
+}
+.n-logo-area {
+    padding: 50px 0;
+    height: 31px;
+    line-height: 31px;
+}
+.fl-l {
+    float: left;
+}
+a {
+    color: #46639c;
+}
+input[type="button"], input[type="submit"], input[type="reset"], a {
+    -webkit-appearance: none;
+}
+a, img, input {
+    border: 0 none;
+}
+a, label, :focus {
+    outline: 0 none;
+}
+a, a:hover {
+    text-decoration: none;
+}
+.logout {
+    font-size: 14px;
+    color: #ababab;
+}
+.fl-r {
+    float: right;
+}
+.clearfix:after {
+    display: block;
+    content: "\20";
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+.n-account-area {
+    overflow: hidden;
+    position: absolute;
+    right: 36px;
+    top: 114px;
+}
+.na-info {
+    width: 120px;
+    text-align: right;
+    padding-top: 16px;
+    margin-right: 10px;
+    float: left;
+}
+.na-name {
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.na-num {
+    position: relative;
+    z-index: 10;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.2;
+}
+.na-img-area {
+    cursor: default;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #e3e3e3;
+    border-radius: 50%;
+    padding: 4px;
+    background: #fff;
+    position: relative;
+    z-index: 4;
+}
+.na-img-bg-area {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.na-img-area img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+img {
+    vertical-align: middle;
+}
+.na-img-area {
+    cursor: default;
+}
+#sms-unsent {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    display: none;
+}
+#sms-unsent .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: .7;
+    background-color: #aaa;
+}
+#sms-unsent .msg-box {
+    width: 560px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -280px;
+    margin-top: -100px;
+    background-color: #fff;
+}
+#sms-unsent .msg-box .text {
+    position: absolute;
+    text-align: center;
+    top: 56px;
+    font-size: 18px;
+    color: #585858;
+    width: 500px;
+}
+#sms-unsent .msg-box .button {
+    position: absolute;
+    text-align: center;
+    top: 100px;
+    width: 120px;
+    height: 40px;
+    color: #333;
+    border: 1px solid #dadada;
+    left: 50%;
+    margin-left: -61px;
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 16px;
+    border-radius: 1px;
+}
+.blockimportant .layout {
+    width: 960px;
+}
+.n-main-nav {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -1px;
+}
+.n-main-nav ul {
+    width: 73%;
+    overflow: hidden;
+}
+ol, ul {
+    list-style: none;
+}
+.n-main-nav li {
+    float: left;
+    text-align: center;
+    max-width: 25%;
+    height: 44px;
+    overflow: hidden;
+}
+li {
+    list-style: none;
+}
+.n-main-nav li.current a, .n-main-nav li a:hover {
+    color: #ff7e00;
+}
+.n-main-nav li a {
+    display: block;
+    color: #333;
+    padding: 0 34px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.n-main-nav li.current .n-nav-corner {
+    display: inline-block;
+}
+.n-nav-corner {
+    width: 23px;
+    height: 12px;
+    margin-top: 12px;
+    margin-bottom: -2px;
+    background: url(../images/account/n-layout-corner.png) 0 0 no-repeat;
+}
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+.n-frame {
+    background: #fff;
+    padding: 34px 34px 0;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    min-height: 400px;
+}
+.title-item {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    clear: both;
+}
+.dis-inb {
+    display: inline-block;
+}
+.title-big {
+    font-size: 20px;
+}
+.title-big, .title-bigger, .title-biggest, .title-normal, .title_big30 {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    font-weight: bold;
+}
+.space6 {
+    width: 6px;
+}
+.space6, .space12, .space14, .space16 {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+.font-normal {
+    font-size: 14px;
+}
+.font-default, .font-normal, .font-big {
+    color: #9d9d9d;
+    line-height: 1.5;
+}
+.light-num {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff7e00;
+    padding: 0 2px;
+}
+.score_2 {
+    color: rgb(255,102,0);
+}
+.slider-area {
+    position: relative;
+}
+.slider-bar-bg {
+    border: 1px solid #ddd;
+    background: #e6e6e6;
+    height: 2px;
+    overflow: hidden;
+}
+.score_bg_2 {
+    background-color: rgb(255,102,0);
+}
+.slider-bar-line {
+    background: #ec6a3d;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+.drag-ico {
+    display: inline-block;
+    zoom: 1;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -6px;
+    z-index: 2;
+    background: url(../images/account/drag-ico.png) 0 0 no-repeat;
+}
+.security_level_txt {
+    margin-left: 20px;
+}
+.score_outer_2 em {
+    color: rgb(255,102,0);
+}
+.device-detail-area {
+    position: relative;
+    zoom: 1;
+    overflow: hidden;
+}
+.device-detail-area li {
+    padding: 30px 0;
+    position: relative;
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: -1px;
+}
+.device-detail-area .font-img-item {
+    margin-left: -10px;
+}
+.device-detail-area .font-img-item {
+    margin: 0;
+}
+.font-img-item {
+    height: 42px;
+}
+.font-img-item {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 0 56px;
+}
+.font-img-item .fi-ico {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.fi-ico-lock {
+    background-position: 0px 0;
+}
+.fi-ico {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url(../images/account/device-icos.png) 0 0 no-repeat;
+}
+.device-detail-area .title-normal {
+    vertical-align: middle;
+}
+.title-normal {
+    color: #555;
+}
+.device-detail-area .arrow_r {
+    display: none;
+}
+em, tt, i {
+    font-style: normal;
+}
+.device-detail-area .ada-btn-area {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+}
+.device-detail-area .ada-btn-area .n-btn:last-child {
+    margin-right: 0;
+}
+.n-btn {
+    display: inline-block;
+    line-height: normal !important;
+    color: #555;
+    border: 1px solid #e8e8e8;
+    padding: 7px 40px;
+    background: #fff;
+    overflow: visible;
+    cursor: pointer;
+}
+.fi-ico-email {
+    background-position: -40px 0;
+}
+.fi-ico-phone {
+    background-position: -200px 0;
+}
+.n-footer {
+    color: #9d9d9d;
+    text-align: center;
+    height: 80px;
+    margin-top: -80px;
+}
+.nf-link-area {
+    text-align: center;
+}
+.nf-link-area li {
+    display: inline-block;
+}
+.nf-link-area a:hover, .nf-link-area a.current {
+    color: #333;
+}
+.nf-link-area a {
+    display: inline-block;
+    padding: 0 10px;
+    color: #757575;
+}
+.nf-intro {
+    padding: 10px;
+}
+.beianlink {
+    color: #9d9d9d;
+}
+.btn-action-go{
+    display:none;
+}

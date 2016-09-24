@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbs.dao.CollectionDao">
+  <resultMap id="BaseResultMap" type="com.bbs.entity.Collection">
+    <id column="COL_ID" jdbcType="DECIMAL" property="colId" />
+    <result column="COL_USER" jdbcType="DECIMAL" property="colUser" />
+    <result column="POST_ID" jdbcType="DECIMAL" property="postId" />
+    <result column="REPORT_USER" jdbcType="DECIMAL" property="reportUser" />
+    <result column="COL_TIME" jdbcType="DATE" property="colTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    COL_ID, COL_USER, POST_ID, REPORT_USER, COL_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BBS.BBS_COLLECTION
+    where COL_ID = #{colId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from BBS.BBS_COLLECTION
+    where COL_ID = #{colId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.bbs.entity.Collection">
+    insert into BBS.BBS_COLLECTION (COL_ID, COL_USER, POST_ID, 
+      REPORT_USER, COL_TIME)
+    values (#{colId,jdbcType=DECIMAL}, #{colUser,jdbcType=DECIMAL}, #{postId,jdbcType=DECIMAL}, 
+      #{reportUser,jdbcType=DECIMAL}, #{colTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bbs.entity.Collection">
+    insert into BBS.BBS_COLLECTION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="colId != null">
+        COL_ID,
+      </if>
+      <if test="colUser != null">
+        COL_USER,
+      </if>
+      <if test="postId != null">
+        POST_ID,
+      </if>
+      <if test="reportUser != null">
+        REPORT_USER,
+      </if>
+      <if test="colTime != null">
+        COL_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="colId != null">
+        #{colId,jdbcType=DECIMAL},
+      </if>
+      <if test="colUser != null">
+        #{colUser,jdbcType=DECIMAL},
+      </if>
+      <if test="postId != null">
+        #{postId,jdbcType=DECIMAL},
+      </if>
+      <if test="reportUser != null">
+        #{reportUser,jdbcType=DECIMAL},
+      </if>
+      <if test="colTime != null">
+        #{colTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bbs.entity.Collection">
+    update BBS.BBS_COLLECTION
+    <set>
+      <if test="colUser != null">
+        COL_USER = #{colUser,jdbcType=DECIMAL},
+      </if>
+      <if test="postId != null">
+        POST_ID = #{postId,jdbcType=DECIMAL},
+      </if>
+      <if test="reportUser != null">
+        REPORT_USER = #{reportUser,jdbcType=DECIMAL},
+      </if>
+      <if test="colTime != null">
+        COL_TIME = #{colTime,jdbcType=DATE},
+      </if>
+    </set>
+    where COL_ID = #{colId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bbs.entity.Collection">
+    update BBS.BBS_COLLECTION
+    set COL_USER = #{colUser,jdbcType=DECIMAL},
+      POST_ID = #{postId,jdbcType=DECIMAL},
+      REPORT_USER = #{reportUser,jdbcType=DECIMAL},
+      COL_TIME = #{colTime,jdbcType=DATE}
+    where COL_ID = #{colId,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,0 +1,63 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote {
+    margin: 0;
+    padding: 0;
+}
+div{
+    display: block;
+}
+a{
+    /*color:purple;*/
+    text-decoration:none;
+}
+ul,ol{list-style: none  }
+body{
+    width: 1349px;
+    height: 87px;
+}
+/*尾部*/
+#footer{
+    float: left;
+    width: 1349px;
+    height: 87px;
+    background-color: black;
+}
+#footer_o{
+    width: 960px;
+    height: 42px;
+    margin-top: 22px;
+    margin-left: 180px;
+}
+.f_f_1{
+    float: left;
+    width: 164px;
+    height: 19px;
+}
+.f_f_2{
+    float: right;
+    width: 440px;
+    height: 17px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-right: 240px;
+    color: whitesmoke;
+}
+.pipe{
+    width: 3px;
+    height: 17px;
+}
+.f_f_3{
+    /*float: right;*/
+    width: 138px;
+    height: 21px;
+    font-size: 12px;
+    color: #7c7c7c;
+    margin-left: 800px;
+}
+.f_f_4{
+    float: left;
+    width: 960px;
+    height: 13px;
+    font-size: 13px;
+    color: #7c7c7c;
+    padding-left: 290px;
+}

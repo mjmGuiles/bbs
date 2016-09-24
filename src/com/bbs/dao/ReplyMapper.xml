@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbs.dao.ReplyDao">
+  <resultMap id="BaseResultMap" type="com.bbs.entity.Reply">
+    <id column="RE_ID" jdbcType="DECIMAL" property="reId" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="POST_ID" jdbcType="DECIMAL" property="postId" />
+    <result column="RE_TIME" jdbcType="DATE" property="reTime" />
+    <result column="IS_DELETE" jdbcType="VARCHAR" property="isDelete" />
+    <result column="DELETE_TIME" jdbcType="DATE" property="deleteTime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.bbs.entity.Reply">
+    <result column="RE_CONTENT" jdbcType="CLOB" property="reContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    RE_ID, USER_ID, POST_ID, RE_TIME, IS_DELETE, DELETE_TIME
+  </sql>
+  <sql id="Blob_Column_List">
+    RE_CONTENT
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from BBS.BBS_REPLY
+    where RE_ID = #{reId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from BBS.BBS_REPLY
+    where RE_ID = #{reId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.bbs.entity.Reply">
+    insert into BBS.BBS_REPLY (RE_ID, USER_ID, POST_ID, 
+      RE_TIME, IS_DELETE, DELETE_TIME, 
+      RE_CONTENT)
+    values (#{reId,jdbcType=DECIMAL}, #{userId,jdbcType=DECIMAL}, #{postId,jdbcType=DECIMAL}, 
+      #{reTime,jdbcType=DATE}, #{isDelete,jdbcType=VARCHAR}, #{deleteTime,jdbcType=DATE}, 
+      #{reContent,jdbcType=CLOB})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bbs.entity.Reply">
+    insert into BBS.BBS_REPLY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="reId != null">
+        RE_ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="postId != null">
+        POST_ID,
+      </if>
+      <if test="reTime != null">
+        RE_TIME,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="deleteTime != null">
+        DELETE_TIME,
+      </if>
+      <if test="reContent != null">
+        RE_CONTENT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="reId != null">
+        #{reId,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="postId != null">
+        #{postId,jdbcType=DECIMAL},
+      </if>
+      <if test="reTime != null">
+        #{reTime,jdbcType=DATE},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteTime != null">
+        #{deleteTime,jdbcType=DATE},
+      </if>
+      <if test="reContent != null">
+        #{reContent,jdbcType=CLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bbs.entity.Reply">
+    update BBS.BBS_REPLY
+    <set>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="postId != null">
+        POST_ID = #{postId,jdbcType=DECIMAL},
+      </if>
+      <if test="reTime != null">
+        RE_TIME = #{reTime,jdbcType=DATE},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteTime != null">
+        DELETE_TIME = #{deleteTime,jdbcType=DATE},
+      </if>
+      <if test="reContent != null">
+        RE_CONTENT = #{reContent,jdbcType=CLOB},
+      </if>
+    </set>
+    where RE_ID = #{reId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.bbs.entity.Reply">
+    update BBS.BBS_REPLY
+    set USER_ID = #{userId,jdbcType=DECIMAL},
+      POST_ID = #{postId,jdbcType=DECIMAL},
+      RE_TIME = #{reTime,jdbcType=DATE},
+      IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      DELETE_TIME = #{deleteTime,jdbcType=DATE},
+      RE_CONTENT = #{reContent,jdbcType=CLOB}
+    where RE_ID = #{reId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bbs.entity.Reply">
+    update BBS.BBS_REPLY
+    set USER_ID = #{userId,jdbcType=DECIMAL},
+      POST_ID = #{postId,jdbcType=DECIMAL},
+      RE_TIME = #{reTime,jdbcType=DATE},
+      IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      DELETE_TIME = #{deleteTime,jdbcType=DATE}
+    where RE_ID = #{reId,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbs.dao.UserDao">
+  <resultMap id="UserResultMap" type="com.bbs.entity.User">
+    <id column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+    <result column="REG_TIME" jdbcType="DATE" property="regTime" />
+    <result column="LOGIN_TIME" jdbcType="DATE" property="loginTime" />
+    <result column="POST_NUM" jdbcType="DECIMAL" property="postNum" />
+    <result column="ELITEPOST_NUM" jdbcType="DECIMAL" property="elitepostNum" />
+    <result column="USER_TYPE" jdbcType="VARCHAR" property="userType" />
+    <result column="USER_GENDER" jdbcType="VARCHAR" property="userGender" />
+    <result column="USER_BIRTH" jdbcType="DATE" property="userBirth" />
+    <result column="USER_NATIVEPLACE" jdbcType="VARCHAR" property="userNativeplace" />
+    <result column="USER_QQ" jdbcType="VARCHAR" property="userQq" />
+    <result column="USER_SIGNNATIVE" jdbcType="VARCHAR" property="userSignnative" />
+    <result column="USER_HEADER" jdbcType="VARCHAR" property="userHeader" />
+    <result column="USER_INTEGRAL" jdbcType="DECIMAL" property="userIntegral" />
+    <result column="USER_PHONE" jdbcType="VARCHAR" property="userPhone" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, USER_NAME, USER_EMAIL, REG_TIME, LOGIN_TIME, POST_NUM, ELITEPOST_NUM, USER_TYPE, 
+    USER_GENDER, USER_BIRTH, USER_NATIVEPLACE, USER_QQ, USER_SIGNNATIVE, USER_HEADER, 
+    USER_INTEGRAL, USER_PHONE, USER_PASSWORD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="UserResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BBS.BBS_USER
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </select>
+  <select id="getAllFriend" parameterType="java.lang.Integer" resultMap="UserResultMap">
+  select *from bbs_user where user_id in (select fri_id from bbs_friend where USER_ID = #{userId,jdbcType=DECIMAL})
+  </select>
+  <select id="getPhone" parameterType="java.lang.Integer" resultType="java.lang.String">
+  select (select substr(USER_PHONE,1,3) from bbs_user where USER_ID = #{userId,jdbcType=DECIMAL})||'****'||(select substr(user_phone,8,12) from bbs_user where USER_ID = #{userId,jdbcType=DECIMAL}) from dual
+  </select>
+  <select id="getEmail" parameterType="java.lang.Integer" resultType="java.lang.String">
+  select (select substr(USER_EMAIL,1,3) from bbs_user where USER_ID = #{userId,jdbcType=DECIMAL})||'****@***' from dual
+  </select>
+  <select id="findUser" resultMap="UserResultMap" parameterType="com.bbs.entity.User">
+  select *from bbs_user where 
+  (user_name =#{userName,jdbcType=VARCHAR} and user_password =#{userPassword,jdbcType=VARCHAR})or
+  (USER_EMAIL = #{userEmail,jdbcType=VARCHAR} and user_password =#{userPassword,jdbcType=VARCHAR})or
+  (USER_PHONE = #{userPhone,jdbcType=VARCHAR} and user_password =#{userPassword,jdbcType=VARCHAR})
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from BBS.BBS_USER
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.bbs.entity.User">
+    insert into BBS.BBS_USER (USER_ID, USER_NAME, USER_EMAIL, 
+      REG_TIME, LOGIN_TIME, POST_NUM, 
+      ELITEPOST_NUM, USER_TYPE, USER_GENDER, 
+      USER_BIRTH, USER_NATIVEPLACE, USER_QQ, 
+      USER_SIGNNATIVE, USER_HEADER, USER_INTEGRAL, 
+      USER_PHONE, USER_PASSWORD)
+    values (#{userId,jdbcType=DECIMAL}, #{userName,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, 
+      #{regTime,jdbcType=DATE}, #{loginTime,jdbcType=DATE}, #{postNum,jdbcType=DECIMAL}, 
+      #{elitepostNum,jdbcType=DECIMAL}, #{userType,jdbcType=VARCHAR}, #{userGender,jdbcType=VARCHAR}, 
+      #{userBirth,jdbcType=DATE}, #{userNativeplace,jdbcType=VARCHAR}, #{userQq,jdbcType=VARCHAR}, 
+      #{userSignnative,jdbcType=VARCHAR}, #{userHeader,jdbcType=VARCHAR}, #{userIntegral,jdbcType=DECIMAL}, 
+      #{userPhone,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bbs.entity.User">
+    insert into BBS.BBS_USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="userEmail != null">
+        USER_EMAIL,
+      </if>
+      <if test="regTime != null">
+        REG_TIME,
+      </if>
+      <if test="loginTime != null">
+        LOGIN_TIME,
+      </if>
+      <if test="postNum != null">
+        POST_NUM,
+      </if>
+      <if test="elitepostNum != null">
+        ELITEPOST_NUM,
+      </if>
+      <if test="userType != null">
+        USER_TYPE,
+      </if>
+      <if test="userGender != null">
+        USER_GENDER,
+      </if>
+      <if test="userBirth != null">
+        USER_BIRTH,
+      </if>
+      <if test="userNativeplace != null">
+        USER_NATIVEPLACE,
+      </if>
+      <if test="userQq != null">
+        USER_QQ,
+      </if>
+      <if test="userSignnative != null">
+        USER_SIGNNATIVE,
+      </if>
+      <if test="userHeader != null">
+        USER_HEADER,
+      </if>
+      <if test="userIntegral != null">
+        USER_INTEGRAL,
+      </if>
+      <if test="userPhone != null">
+        USER_PHONE,
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null">
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="regTime != null">
+        #{regTime,jdbcType=DATE},
+      </if>
+      <if test="loginTime != null">
+        #{loginTime,jdbcType=DATE},
+      </if>
+      <if test="postNum != null">
+        #{postNum,jdbcType=DECIMAL},
+      </if>
+      <if test="elitepostNum != null">
+        #{elitepostNum,jdbcType=DECIMAL},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="userGender != null">
+        #{userGender,jdbcType=VARCHAR},
+      </if>
+      <if test="userBirth != null">
+        #{userBirth,jdbcType=DATE},
+      </if>
+      <if test="userNativeplace != null">
+        #{userNativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="userQq != null">
+        #{userQq,jdbcType=VARCHAR},
+      </if>
+      <if test="userSignnative != null">
+        #{userSignnative,jdbcType=VARCHAR},
+      </if>
+      <if test="userHeader != null">
+        #{userHeader,jdbcType=VARCHAR},
+      </if>
+      <if test="userIntegral != null">
+        #{userIntegral,jdbcType=DECIMAL},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bbs.entity.User">
+    update BBS.BBS_USER
+    <set>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null">
+        USER_EMAIL = #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="regTime != null">
+        REG_TIME = #{regTime,jdbcType=DATE},
+      </if>
+      <if test="loginTime != null">
+        LOGIN_TIME = #{loginTime,jdbcType=DATE},
+      </if>
+      <if test="postNum != null">
+        POST_NUM = #{postNum,jdbcType=DECIMAL},
+      </if>
+      <if test="elitepostNum != null">
+        ELITEPOST_NUM = #{elitepostNum,jdbcType=DECIMAL},
+      </if>
+      <if test="userType != null">
+        USER_TYPE = #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="userGender != null">
+        USER_GENDER = #{userGender,jdbcType=VARCHAR},
+      </if>
+      <if test="userBirth != null">
+        USER_BIRTH = #{userBirth,jdbcType=DATE},
+      </if>
+      <if test="userNativeplace != null">
+        USER_NATIVEPLACE = #{userNativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="userQq != null">
+        USER_QQ = #{userQq,jdbcType=VARCHAR},
+      </if>
+      <if test="userSignnative != null">
+        USER_SIGNNATIVE = #{userSignnative,jdbcType=VARCHAR},
+      </if>
+      <if test="userHeader != null">
+        USER_HEADER = #{userHeader,jdbcType=VARCHAR},
+      </if>
+      <if test="userIntegral != null">
+        USER_INTEGRAL = #{userIntegral,jdbcType=DECIMAL},
+      </if>
+      <if test="userPhone != null">
+        USER_PHONE = #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bbs.entity.User">
+    update BBS.BBS_USER
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      USER_EMAIL = #{userEmail,jdbcType=VARCHAR},
+      REG_TIME = #{regTime,jdbcType=DATE},
+      LOGIN_TIME = #{loginTime,jdbcType=DATE},
+      POST_NUM = #{postNum,jdbcType=DECIMAL},
+      ELITEPOST_NUM = #{elitepostNum,jdbcType=DECIMAL},
+      USER_TYPE = #{userType,jdbcType=VARCHAR},
+      USER_GENDER = #{userGender,jdbcType=VARCHAR},
+      USER_BIRTH = #{userBirth,jdbcType=DATE},
+      USER_NATIVEPLACE = #{userNativeplace,jdbcType=VARCHAR},
+      USER_QQ = #{userQq,jdbcType=VARCHAR},
+      USER_SIGNNATIVE = #{userSignnative,jdbcType=VARCHAR},
+      USER_HEADER = #{userHeader,jdbcType=VARCHAR},
+      USER_INTEGRAL = #{userIntegral,jdbcType=DECIMAL},
+      USER_PHONE = #{userPhone,jdbcType=VARCHAR},
+      USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </update>
+  <update id="changePassword" parameterType="com.bbs.entity.User">
+  update BBS.BBS_USER
+    set 
+      USER_PASSWORD = #{userPassword,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </update>
+  <update id="changeMail" parameterType="com.bbs.entity.User">
+  update BBS.BBS_USER
+    set 
+      USER_EMAIL = #{userEmail,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </update>
+  <update id="changePhone" parameterType="com.bbs.entity.User">
+  update BBS.BBS_USER
+    set USER_PHONE = #{userPhone,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateUser" parameterType="com.bbs.entity.User">
+  update BBS.BBS_USER
+    set 
+      USER_GENDER = #{userGender,jdbcType=VARCHAR},
+      USER_BIRTH = #{userBirth,jdbcType=DATE},
+      USER_NATIVEPLACE = #{userNativeplace,jdbcType=VARCHAR},
+      USER_QQ = #{userQq,jdbcType=VARCHAR},
+      USER_SIGNNATIVE = #{userSignnative,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </update>
+</mapper>

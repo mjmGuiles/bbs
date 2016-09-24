@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbs.dao.PostDao">
+  <resultMap id="PostResultMap" type="com.bbs.entity.Post">
+    <id column="POST_ID" jdbcType="DECIMAL" property="postId" />
+    <result column="POST_HEADER" jdbcType="VARCHAR" property="postHeader" />
+    <result column="POST_CONTENT" jdbcType="VARCHAR" property="postContent" />
+    <result column="THEME_ID" jdbcType="DECIMAL" property="themeId" />
+    <result column="POST_TIME" jdbcType="DATE" property="postTime" />
+    <result column="READ_COUNT" jdbcType="DECIMAL" property="readCount" />
+    <result column="REPLY_COUNT" jdbcType="DECIMAL" property="replyCount" />
+    <result column="IS_TOP" jdbcType="VARCHAR" property="isTop" />
+    <result column="IS_ELITE" jdbcType="VARCHAR" property="isElite" />
+    <result column="IS_DELETE" jdbcType="VARCHAR" property="isDelete" />
+    <result column="DELETE_TIME" jdbcType="DATE" property="deleteTime" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="POST_IMG" jdbcType="VARCHAR" property="postImg" />
+    <result column="POST_SUMMARY" jdbcType="VARCHAR" property="postSummary" />
+    <association property="user" resultMap="UserResultMap"></association>
+    <association property="theme" resultMap="ThemeResultMap"></association>
+  </resultMap>
+   <resultMap id="UserResultMap" type="com.bbs.entity.User">
+    <id column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+    <result column="REG_TIME" jdbcType="DATE" property="regTime" />
+    <result column="LOGIN_TIME" jdbcType="DATE" property="loginTime" />
+    <result column="POST_NUM" jdbcType="DECIMAL" property="postNum" />
+    <result column="ELITEPOST_NUM" jdbcType="DECIMAL" property="elitepostNum" />
+    <result column="USER_TYPE" jdbcType="VARCHAR" property="userType" />
+    <result column="USER_GENDER" jdbcType="VARCHAR" property="userGender" />
+    <result column="USER_BIRTH" jdbcType="DATE" property="userBirth" />
+    <result column="USER_NATIVEPLACE" jdbcType="VARCHAR" property="userNativeplace" />
+    <result column="USER_QQ" jdbcType="VARCHAR" property="userQq" />
+    <result column="USER_SIGNNATIVE" jdbcType="VARCHAR" property="userSignnative" />
+    <result column="USER_HEADER" jdbcType="VARCHAR" property="userHeader" />
+    <result column="USER_INTEGRAL" jdbcType="DECIMAL" property="userIntegral" />
+    <result column="USER_PHONE" jdbcType="VARCHAR" property="userPhone" />
+    <result column="USER_PASSWORD" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+   <resultMap id="ThemeResultMap" type="com.bbs.entity.Theme">
+    <id column="THEME_ID" jdbcType="DECIMAL" property="themeId" />
+    <result column="SECTION_ID" jdbcType="DECIMAL" property="sectionId" />
+    <result column="THEME_NAME" jdbcType="VARCHAR" property="themeName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    POST_ID, POST_HEADER, POST_CONTENT, THEME_ID, POST_TIME, READ_COUNT, REPLY_COUNT, 
+    IS_TOP, IS_ELITE, IS_DELETE, DELETE_TIME, USER_ID, POST_IMG, POST_SUMMARY
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="PostResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BBS.BBS_POST
+    where POST_ID = #{postId,jdbcType=DECIMAL}
+  </select>
+  <select id="getHotPost" resultMap="PostResultMap">
+  select *from bbs_post where is_top = '是'
+  </select>
+  <select id="getPostByTheme" parameterType="Map" resultMap="PostResultMap">
+  <![CDATA[ SELECT * FROM 
+  (SELECT A.*, ROWNUM RN  FROM (select *from bbs_post order by post_time desc) A  WHERE ROWNUM   <=#{endNumber,jdbcType=INTEGER}) WHERE RN >= #{startNumber,jdbcType=INTEGER} ]]>
+  </select>
+  <select id="getPost" resultMap="PostResultMap">
+  select *from bbs_post p,bbs_user u where p.user_id =u.user_id
+  </select>
+  <select id="getCount" resultType="java.lang.Integer">
+  select count(*)from bbs_post
+  </select>
+  <select id="getAllPost" resultMap="PostResultMap">
+    select *from bbs_post p,bbs_user u,bbs_theme t where p.user_id =u.user_id and p.theme_id = t.theme_id order by post_time desc
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from BBS.BBS_POST
+    where POST_ID = #{postId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.bbs.entity.Post">
+    insert into BBS.BBS_POST (POST_ID, POST_HEADER, POST_CONTENT, 
+      THEME_ID, POST_TIME, READ_COUNT, 
+      REPLY_COUNT, IS_TOP, IS_ELITE, 
+      IS_DELETE, DELETE_TIME, USER_ID, 
+      POST_IMG, POST_SUMMARY)
+    values (#{postId,jdbcType=DECIMAL}, #{postHeader,jdbcType=VARCHAR}, #{postContent,jdbcType=VARCHAR}, 
+      #{themeId,jdbcType=DECIMAL}, #{postTime,jdbcType=DATE}, #{readCount,jdbcType=DECIMAL}, 
+      #{replyCount,jdbcType=DECIMAL}, #{isTop,jdbcType=VARCHAR}, #{isElite,jdbcType=VARCHAR}, 
+      #{isDelete,jdbcType=VARCHAR}, #{deleteTime,jdbcType=DATE}, #{userId,jdbcType=DECIMAL}, 
+      #{postImg,jdbcType=VARCHAR}, #{postSummary,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bbs.entity.Post">
+    insert into BBS.BBS_POST
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="postId != null">
+        POST_ID,
+      </if>
+      <if test="postHeader != null">
+        POST_HEADER,
+      </if>
+      <if test="postContent != null">
+        POST_CONTENT,
+      </if>
+      <if test="themeId != null">
+        THEME_ID,
+      </if>
+      <if test="postTime != null">
+        POST_TIME,
+      </if>
+      <if test="readCount != null">
+        READ_COUNT,
+      </if>
+      <if test="replyCount != null">
+        REPLY_COUNT,
+      </if>
+      <if test="isTop != null">
+        IS_TOP,
+      </if>
+      <if test="isElite != null">
+        IS_ELITE,
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE,
+      </if>
+      <if test="deleteTime != null">
+        DELETE_TIME,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="postImg != null">
+        POST_IMG,
+      </if>
+      <if test="postSummary != null">
+        POST_SUMMARY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="postId != null">
+        #{postId,jdbcType=DECIMAL},
+      </if>
+      <if test="postHeader != null">
+        #{postHeader,jdbcType=VARCHAR},
+      </if>
+      <if test="postContent != null">
+        #{postContent,jdbcType=VARCHAR},
+      </if>
+      <if test="themeId != null">
+        #{themeId,jdbcType=DECIMAL},
+      </if>
+      <if test="postTime != null">
+        #{postTime,jdbcType=DATE},
+      </if>
+      <if test="readCount != null">
+        #{readCount,jdbcType=DECIMAL},
+      </if>
+      <if test="replyCount != null">
+        #{replyCount,jdbcType=DECIMAL},
+      </if>
+      <if test="isTop != null">
+        #{isTop,jdbcType=VARCHAR},
+      </if>
+      <if test="isElite != null">
+        #{isElite,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteTime != null">
+        #{deleteTime,jdbcType=DATE},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="postImg != null">
+        #{postImg,jdbcType=VARCHAR},
+      </if>
+      <if test="postSummary != null">
+        #{postSummary,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bbs.entity.Post">
+    update BBS.BBS_POST
+    <set>
+      <if test="postHeader != null">
+        POST_HEADER = #{postHeader,jdbcType=VARCHAR},
+      </if>
+      <if test="postContent != null">
+        POST_CONTENT = #{postContent,jdbcType=VARCHAR},
+      </if>
+      <if test="themeId != null">
+        THEME_ID = #{themeId,jdbcType=DECIMAL},
+      </if>
+      <if test="postTime != null">
+        POST_TIME = #{postTime,jdbcType=DATE},
+      </if>
+      <if test="readCount != null">
+        READ_COUNT = #{readCount,jdbcType=DECIMAL},
+      </if>
+      <if test="replyCount != null">
+        REPLY_COUNT = #{replyCount,jdbcType=DECIMAL},
+      </if>
+      <if test="isTop != null">
+        IS_TOP = #{isTop,jdbcType=VARCHAR},
+      </if>
+      <if test="isElite != null">
+        IS_ELITE = #{isElite,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteTime != null">
+        DELETE_TIME = #{deleteTime,jdbcType=DATE},
+      </if>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=DECIMAL},
+      </if>
+      <if test="postImg != null">
+        POST_IMG = #{postImg,jdbcType=VARCHAR},
+      </if>
+      <if test="postSummary != null">
+        POST_SUMMARY = #{postSummary,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where POST_ID = #{postId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bbs.entity.Post">
+    update BBS.BBS_POST
+    set POST_HEADER = #{postHeader,jdbcType=VARCHAR},
+      POST_CONTENT = #{postContent,jdbcType=VARCHAR},
+      THEME_ID = #{themeId,jdbcType=DECIMAL},
+      POST_TIME = #{postTime,jdbcType=DATE},
+      READ_COUNT = #{readCount,jdbcType=DECIMAL},
+      REPLY_COUNT = #{replyCount,jdbcType=DECIMAL},
+      IS_TOP = #{isTop,jdbcType=VARCHAR},
+      IS_ELITE = #{isElite,jdbcType=VARCHAR},
+      IS_DELETE = #{isDelete,jdbcType=VARCHAR},
+      DELETE_TIME = #{deleteTime,jdbcType=DATE},
+      USER_ID = #{userId,jdbcType=DECIMAL},
+      POST_IMG = #{postImg,jdbcType=VARCHAR},
+      POST_SUMMARY = #{postSummary,jdbcType=VARCHAR}
+    where POST_ID = #{postId,jdbcType=DECIMAL}
+  </update>
+</mapper>

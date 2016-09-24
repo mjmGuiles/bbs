@@ -1,0 +1,248 @@
+body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc {
+    margin: 0;
+    padding: 0;
+}
+body, input, button, select, textarea {
+    font: 12px/1.5 Microsoft YaHei,Tahoma,Helvetica,'SimSun',sans-serif;
+    color: #444;
+}
+body {
+    background: #F7F7F7;
+}
+* {
+    word-wrap: break-word;
+}
+.wp {
+    width: 98%;
+    margin: 0 auto;
+}
+#pt {
+    margin: 0px;
+    height: 10px;
+    border: none;
+    background: transparent;
+    line-height: 36px;
+}
+.bm {
+    border: 0px solid #CDCDCD;
+    background: white;
+}
+.bm, .bn {
+    margin-bottom: 10px;
+}
+.cl {
+    zoom: 1;
+}
+#pt .z {
+    padding-right: 10px;
+    line-height: 49px;
+}
+.z {
+    float: left;
+}
+#pt .z a, #pt .z em {
+    float: left;
+    height: 49px;
+    font-size: 12px;
+    margin-left: 0px;
+    line-height: 49px;
+}
+.nvhm {
+    width: 16px;
+    background: url(../images/favorite/imghack.png) no-repeat -320px 18px;
+    line-height: 200px !important;
+    overflow: hidden;
+}
+a {
+    color: #8F8F8F;
+    text-decoration: none;
+}
+#pt .z em {
+    width: 20px;
+    background: url(../images/favorite/imghack.png) no-repeat -336px 21px;
+    line-height: 200px;
+    overflow: hidden;
+}
+.cl:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#wp .wp {
+    width: auto;
+    clear: both;
+}
+#ct {
+    min-height: 300px;
+}
+.ct2_a {
+    padding-left: 150px;
+}
+.ct2_a, .ct3_a {
+    margin-bottom: 8px;
+    margin-bottom: 30px;
+}
+.ct2_a .mn {
+    width: 93%;
+}
+.ct2_a .mn {
+    display: inline;
+    padding: 5px 16px;
+
+}
+.ct2_a .mn {
+    float: right;
+
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+}
+.mn {
+    overflow: hidden;
+}
+.bw0 {
+    background: transparent;
+}
+.ct2_a h1.mt {
+    display: none;
+}
+.bbs {
+    border-bottom: 1px solid #CDCDCD !important;
+}
+.mt {
+    padding: 10px 0;
+    font-size: 14px;
+}
+.vm {
+    vertical-align: middle;
+}
+.mtm {
+    margin-top: 10px !important;
+}
+.miui_ckb {
+    width: 15px;
+    height: 15px;
+    background: url(../images/favorite/imghack.png) 0 0 no-repeat transparent;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    margin-left: 18px;
+    top: 3px;
+}
+.pns label {
+    line-height: 26px;
+    float: left;
+    margin-right: 20px;
+}
+label {
+    cursor: pointer;
+}
+.pr, .pc {
+    vertical-align: middle;
+    margin: 0 5px 1px 0;
+    padding: 0;
+}
+.pn4 {
+    background: transparent;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+.miui_favorite_ul {
+    border-top: 2px solid #f4f4f4;
+    margin-top: 8px;
+}
+.miui_favorite_ul li {
+    min-height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #f4f4f4;
+}
+.pbm {
+    padding-bottom: 10px !important;
+}
+.ptm {
+    padding-top: 10px !important;
+}
+.bbda {
+    border-bottom: 0px dashed #CDCDCD;
+}
+ul li, .xl li {
+    list-style: none;
+}
+.a_delete {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: url(../images/favorite/a_delete_bg.png) no-repeat 0px 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.y {
+    float: right;
+}
+.xg1, .xg1 a {
+    color: #999 !important;
+}
+.ct2_a .appl {
+    margin-left: -150px;
+}
+.appl {
+    float: left;
+    overflow: hidden;
+    margin-bottom: 10px;
+    width: 115px;
+}
+.tbn {
+    margin: -4px 0px 0;
+}
+.tbn .mt {
+    padding: 0 0 10px 0;
+    font-size: 24px;
+    border-bottom: 2px solid #e0e0e0;
+}
+.tbn ul {
+    margin: 0;
+}
+.tbn li.a {
+    margin: 0px 0 0;
+    border-top: 0px solid #CDCDCD;
+    border-bottom-style: solid;
+}
+.tbn li {
+    height: 42px;
+    margin: 0px 0 0;
+    line-height: 42px;
+    border-bottom: 1px solid #ececec;
+    font-size: 12px;
+}
+.appl li {
+    display: block;
+    height: 28px;
+    line-height: 28px;
+    white-space: nowrap;
+    word-wrap: normal;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+ul li, .xl li {
+    list-style: none;
+}
+.tbn li.a a {
+    color: #e0561b;
+}
+.tbn ul a {
+    display: block;
+    height: 41px;
+    line-height: 41px;
+}
+.tbn li a {
+    color: #000000;
+}
+.appl li a {
+    text-decoration: none !important;
+}

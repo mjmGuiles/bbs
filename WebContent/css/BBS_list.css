@@ -1,0 +1,794 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote {
+    margin: 0;
+    padding: 0;
+}
+div{
+    display: block;
+}
+ul,ol{
+    list-style: none
+}
+a{
+    text-decoration:none;
+    color: black;
+    cursor: auto;
+}
+a:hover{
+    color:red;
+}
+/*寮曠敤澶撮儴*/
+
+
+/*涓讳綋閮ㄥ垎*/
+body{
+    background-color: #F7F7F7;
+    z-index: 1;
+    font: 12px/1.5 Microsoft YaHei,Tahoma,Helvetica,'SimSun',sans-serif;
+}
+#BBS_list_header{
+    float: left;
+    width: 1349px;
+    height: 240px;
+    overflow:visible;
+}
+.start{
+    float: left;
+    width: 100%;
+    height: auto;
+    line-height: 36px;
+    margin-left: 184px;
+    margin-top: -50px;
+}
+.start_1{
+    width: 167px;
+    height: 49px;
+    line-height: 49px;
+}
+.start_1 em{
+    width: 20px;
+    background: url("../images/list/imghack.png") no-repeat -1px -154px;
+    line-height: 49px;
+}
+.hm{
+    float: left;
+    width: 16px;
+    height: 49px;
+    line-height: 49px !important;
+    overflow: hidden;
+    background: url("../images/list/imghack.png") no-repeat -320px 18px;
+
+}
+.hr{
+    width: 53px;
+    height: 49px;
+    color: #7c7c7c;
+    font-size: 13px;
+}
+.he{
+    width: 48px;
+    height: 49px;
+    color: #7c7c7c;
+    font-size: 13px;
+}
+.sleeping{
+    float: left;
+    width: 960px;
+    height: auto;
+    min-height: 300px;
+    margin-left: 184px;
+    border: 1px solid #F7F7F7;
+    border-radius: 3px;
+}
+.sleeping-1{
+    float: left;
+    width: 960px;
+    height: 52px;
+}
+.miui_fp_name{
+    float: left;
+    width: 164px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.z{
+    float: left;
+    width: 260px;
+    height: 52px;
+}
+.miui_fp_data{
+    float: left;
+    width: 260px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+    margin-left: 10px;
+    color: #7c7c7c;
+}
+.miui_fp_data a{
+    color: #7c7c7c;
+}
+
+.nn{
+    float: left;
+    width: 700px;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #f0f0f0;
+}
+.threadlist_header{
+    float: left;
+    width: 700px;
+    height: auto;
+    background-color: white;
+}
+.hl{
+    float: left;
+    width: 668px;
+    height: 59px;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    margin-left: 16px;
+    margin-top: 15px;
+    background-color:#F7F7F7;
+}
+.filter_sel{
+    float: left;
+    width: 648px;
+    height: 39px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+table {
+    empty-cells: show;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 9px;
+    border-spacing: 2px;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.wz{
+    float: left;
+    width: 330px;
+    height: 37px;
+    line-height: 37px;
+}
+th {
+    float: left;
+    width: 38px;
+    height: 39px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+}
+.pai_x{
+    float: left;
+    width: 39px;
+    height: 28px;
+    font-size: 13px;
+    line-height: 15px;
+    margin-top: 2px;
+}
+.y{
+    float: right;
+    width:130px;
+    height: 26px;
+    font-size: 13px;
+    line-height: 26px;
+}
+.showmenu_miui{
+    float: left;
+    width: 80px;
+    height: 24px;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid #8f8f8f;
+    border-radius: 5px;
+    margin-right: 8px;
+    margin-top: -3px;
+    background: url("../images/list/showmenu_bg.png") no-repeat 0 0;
+}
+#big-1{
+    float: left;
+    width: 80px;
+    height: 65px;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 23px;
+    margin-left: -90px;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid whitesmoke;
+    background-color: white;
+}
+#big-2{
+    float: left;
+    width: 80px;
+    height: 180px;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 23px;
+    margin-left: -90px;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid whitesmoke;
+    background-color: white;
+}
+#big-3{
+    float: left;
+    width: 80px;
+    height: 120px;
+    font-size: 15px;
+    text-align: center;
+    margin-top: -15px;
+    margin-left: 220px;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid whitesmoke;
+    background-color: white;
+}
+.xll{
+    float: left;
+    clear: both;
+    line-height: 30px;
+    margin-left: 10px;
+    color: #7c7c7c;
+}
+
+.yy{
+    margin-right: 5px;
+}
+#open_new_window{
+    width: 15px;
+    height: 15px;
+}
+.perfect{
+    float: left;
+    width: 698px;
+    height: auto;
+    margin-left: 5px;
+}
+
+.erver{
+    float: left;
+    width: 678px;
+    height: 73px;;
+    border-bottom: 1px dotted #bdbdbd;
+}
+.avatarbox{
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+.avatarbox-info{
+    float: left;
+    width: 609px;
+    height: 73px;
+    margin-top: 15px;
+}
+.sub-tit{
+    float: left;
+    width: 609px;
+    height: 27px;
+}
+.xst{
+    font-family: 'Microsoft YaHei';
+    color: black;
+    font-size: 16px;
+}
+span.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+.sub-infos{
+    float: left;
+    width: 609px;
+    height: 18px;
+    font-size: 14px;
+    color: #bdbdbd;
+}
+.card_5012{
+    font-size: 14px;
+    color: #bdbdbd;
+}
+.pipe{
+    font-size: 14px;
+    color: #bdbdbd;
+}
+.xi2{
+    font-size: 14px;
+    color: #bdbdbd;
+}
+.number_d{
+    font-size: 14px;
+    color: #bdbdbd;
+}
+.card_669{
+    font-size: 14px;
+    color: #bdbdbd;
+}
+.card_679{
+    font-size: 14px;
+    color: #bdbdbd;
+}
+/*渚ф爮*/
+.sd{
+    float: right;
+    width: 250px;
+    height:auto;
+}
+.big_post_btn{
+    float: right;
+    width: 250px;
+    height: 45px;
+}
+
+.big_post_btn a{
+    float: right;
+    width: 250px;
+    height: 45px;
+    background: url("../images/list/post_btn_big.png") 0 0;
+}
+.logn{
+    width: 369px;
+    height: 231px;
+    border: 3px solid #ededed;
+    border-radius: 5px;
+    position: relative;
+    margin-left: 370px;
+    margin-top: 50px;
+    overflow: visible;
+    background-color: whitesmoke;
+}
+.logn h3{
+    width: 369px;
+    height: 53px;
+    line-height: 12px;
+    font-size: 14px;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color: whitesmoke;
+}
+.btn_zone{
+    width: 369px;
+    height: 178px;
+}
+.login_btn{
+    width: 68px;
+    height: 102px;
+}
+
+.mini{
+    float: left;
+    width: 246px;
+    height: 286px;
+    margin-top: 10px;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    background-color: white;
+}
+.b_t{
+    float: left;
+    width: 246px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 45px;
+    margin-left: 15px;
+    font-family: Microsoft YaHei,SimHei,Verdana,Arial,sans-serif;
+
+}
+
+.modulexl2{
+    float: right;
+    width: 246px;
+    height: 220px;
+    margin-top: 10px;
+}
+.lc{
+     float: left;
+     width: 122px;
+     height: 45px;
+     border: 1px solid #ededed;
+     border-bottom: none;
+     border-left: none;
+ }
+.lc a{
+    line-height: 45px;
+    font-size: 12px;
+    padding-left: 20px;
+    color:#8f8f8f;
+}
+.mb_line{
+    float: left;
+    width: 250px;
+    height: 370px;
+    margin-top: 10px;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.bbt{
+    width: 218px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: Microsoft YaHei,SimHei,Verdana,Arial,sans-serif;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.u_h{
+    width: 218px;
+    height: 77px;
+    margin-left: 15px;
+}
+.ghf{
+    width: 218px;
+    height: 63px;
+    margin-top: 13px;
+}
+.u_article{
+    width: 218px;
+    height: 243px;
+    margin-top: 15px;
+}
+.u_article li{
+    width: 218px;
+    height: 18px;
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 18px;
+    color:  #7c7c7c;
+    margin-top: 5px;
+}
+.u_article li a{
+    color:  #7c7c7c;
+    margin-left: 10px;
+}
+
+.actionn{
+    float: left;
+    width: 250px;
+    height: 269px;
+    border-radius: 5px;
+    border: 1px solid #ededed;
+    margin-top: 10px;
+    background-color: white;
+}
+.team{
+    width: 218px;
+    height: 24px;
+}
+.bmt{
+    width: 218px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: Microsoft YaHei,SimHei,Verdana,Arial,sans-serif;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.acte{
+    float: right;
+    width: 40px;
+    height: 18px;
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: -20px;
+
+}
+.star_users li{
+    float: left;
+    width: 66px;
+    height: 110px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.star_users img{
+    width: 66px;
+    height: 66px;
+}
+.star_uname{
+    width: 39px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: 5px;
+}
+
+.pad{
+    float: left;
+    width: 250px;
+    height: 146px;
+    border-radius: 5px;
+    border: 1px solid #ededed;
+    margin-top: 10px;
+    background-color: white;
+}
+.bgt{
+    width: 218px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    font-family:SimHei,Verdana,Arial,sans-serif;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.b_mt2{
+    width: 218px;
+    height: 78px;
+    margin-top: 10px;
+}
+.follow_list_left{
+    float: left;
+    width: 67px;
+    height: 26px;
+}
+.follow_list_left a{
+    width: 65px;
+    height: 20px;
+    font-size: 10px;
+    line-height: 30px;
+    color:  #7c7c7c;
+}
+.fd{
+    margin-left: 15px;
+}
+#weixin_title{
+    height: 180px;
+    overflow: hidden;
+}
+.sp_line{
+    float: left;
+    width: 3px;
+    height: 17px;
+    margin-left: 52px;
+    margin-top: -25px;
+}
+.happy{
+    float: left;
+    width: 700px;
+    height: 28px;
+    margin-top: 10px;
+}
+.hppy{
+    float: left;
+    width: 67px;
+    height: 26px;
+    margin-left: 186px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #ededed;
+}
+.hehe{
+    width: 61px;
+    height: 26px;
+    line-height: 28px;
+    font-size: 15px;
+    color: #7c7c7c;
+    margin-left: 10px;
+}
+.py{
+    float: left;
+    width: 421px;
+    height: 28px;
+    line-height: 26px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.py strong{
+    float: left;
+    width: 27px;
+    height: 27px;
+    line-height: 26px;
+    font-size: 12px;
+    text-align: center;
+    color: #7c7c7c;
+    border-radius: 5px;
+    background-color: white;
+}
+.c_a{
+    float: left;
+    width: 28px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 5px;
+    background-color: white;
+    border: 1px solid #ededed;
+}
+.last{
+    float: left;
+    width: 47px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 5px;
+    border: 1px solid #ededed;
+    background-color: white;
+}
+.nxt{
+    float: right;
+    width: 25px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 5px;
+    color: #7c7c7c;
+    border: 1px solid #ededed;
+    background-color: white;
+}
+.prev{
+	float: right;
+    width: 25px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 5px;
+    color: #7c7c7c;
+    border: 1px solid #ededed;
+    background-color: white;
+}
+.blmt{
+    float: right;
+    width: 218px;
+    height: 310px;
+    font-size: 12px;
+    margin-top: 15px;
+    margin-right: -15px;
+}
+
+/*澶栧睍*/
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, code, del, dfn, em, img, strong, dd, dl, dt, li, ol, ul, fieldset, form, label, button, input, table, caption, tbody, tfoot, thead, tr, th, td, menu {
+    margin:0;
+    padding:0;
+}
+ol, ul, menu {
+    list-style:none
+}
+img {
+    border:0
+}
+a:focus {
+    outline:none
+}
+.theme-post {
+    z-index:9999;
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:660px;
+    height:360px;
+    margin:-180px 0 0 -330px;
+    border-radius:5px;
+    border:solid 2px #666;
+    background-color:#fff;
+    display:none;
+    box-shadow: 0 0 10px #666;
+}
+.theme-poptit {
+    border-bottom:1px solid #ddd;
+    padding:12px;
+    position: relative;
+}
+.theme-poptit .close {
+    float:right;
+    color:#999;
+    padding:5px;
+    margin:-2px -5px -5px;
+    font:bold 14px/14px simsun;
+    text-shadow:0 1px 0 #ddd
+}
+.theme-poptit .close:hover {
+    font-family: 'Microsoft YaHei';
+    color:#444;
+    font-size: 16px;
+}
+.theme-popbod {
+    padding:60px 15px;
+    color:#444;
+    height: 148px;
+    font-family: 'Microsoft YaHei';
+    font-size: 16px;
+}
+.dform {
+    padding:80px 60px 40px;
+    text-align: center;
+}
+.dform{
+    background-color:#FFFFCC;
+    border-color:#FFCC66
+}
+.theme-post-mask {
+    z-index: 9998;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+    display:none
+}
+.theme-popbod h4{
+    margin-top: -30px;
+ }
+.easy_l .easy_ll{
+    width: 70px;
+    height: 130px;
+    background-color:red;
+}
+.pikai{
+     float:left;
+     width: 60px;
+     height: 24px;
+    margin-top: 120px;
+    margin-left: -64px;
+ }
+.pika{
+    float:left;
+    width: 60px;
+    height: 24px;
+    margin-top: 80px;
+    margin-left: 8px;
+}
+.easyl{
+    width: 68px;
+    height: 102px;
+    float: left;
+    margin-left: 160px;
+    margin-top: 40px;
+    background: url("../images/list/login_icon.png") -99px 0px no-repeat;
+}
+.easy_ll{
+    background: url("../images/list/login_icon.png") 0 0 no-repeat;
+    width: 68px;
+    height: 102px;
+    float: left;
+    margin-left: 85px;
+    margin-top: 40px;
+}
+/*鍙充晶蹇嵎鏍�*/
+#scrolltop {
+    position: fixed;
+    bottom: 105px;
+    display: block;
+    margin: -30px 0 0 10px;
+    width: 47px;
+    border: 0px #cdcdcd solid;
+    border-radius: 3px;
+    border-top: 0;
+    cursor: pointer;
+}
+.scrolltopa{
+    float: left;
+    width: 37px;
+    height: 40px;
+    background: url("../images/list/scrolltop.png") 0px 0px no-repeat;
+}
+.returnboard{
+    float: left;
+    width: 37px;
+    height: 40px;
+    background: url("../images/list/scrolltop.png") 0px -80px no-repeat;
+}

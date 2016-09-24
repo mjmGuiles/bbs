@@ -1,0 +1,461 @@
+body {
+    background: #F7F7F7;
+    display: block;
+    height: 100%;
+}
+body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc {
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+
+body, input, button, select, textarea {
+    font: 12px/1.5 Microsoft YaHei,Tahoma,Helvetica,'SimSun',sans-serif;
+    color: #444;
+}
+#content {
+    width: 98%;
+    margin: 0 auto;
+    height: 1100px;
+}
+#pt {
+    margin: 0px;
+    height: 10px;
+    border: none;
+    background: transparent;
+    line-height: 36px;
+}
+.bm {
+    border: 0px solid #CDCDCD;
+    background: white;
+}
+.bm, .bn {
+    margin-bottom: 10px;
+}
+.cl {
+    zoom: 1;
+}
+#pt .z {
+    padding-right: 10px;
+    line-height: 49px;
+}
+.z {
+    float: left;
+}
+#pt .z a, #pt .z em {
+    float: left;
+    height: 49px;
+    font-size: 12px;
+    margin-left: 0px;
+    line-height: 49px;
+}
+.nvhm {
+    width: 16px;
+    background: url(../images/post/imghack.png) no-repeat -320px 18px;
+    line-height: 200px !important;
+    overflow: hidden;
+}
+a {
+    color: #8F8F8F;
+    text-decoration: none;
+}
+#pt .z em {
+    width: 20px;
+    background: url(../images/post/imghack.png) no-repeat -336px 21px;
+    line-height: 200px;
+    overflow: hidden;
+}
+#pt .z a, #pt .z em {
+    float: left;
+    height: 49px;
+    font-size: 12px;
+    margin-left: 0px;
+    line-height: 49px;
+}
+em, cite, i {
+    font-style: normal;
+}
+.cl:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#wp .wp {
+    width: auto;
+    clear: both;
+}
+#ct {
+    min-height: 300px;
+    float: left;
+    background-color: #F7F7F7;
+}
+.pg_post .ct2_a {
+    margin-left: 0;
+    padding-left: 0;
+}
+.wp {
+    width: 98%;
+}
+.ct2_a_r {
+    border: none;
+    background-image: none;
+}
+.ct2_a, .ct3_a {
+    margin-bottom: 8px;
+    margin-bottom: 30px;
+}
+.wp {
+    margin: 0 auto;
+}
+.bw0 {
+    background: transparent;
+}
+.bm {
+    border: 0px solid #CDCDCD;
+}
+.bm, .bn {
+    margin-bottom: 10px;
+}
+.bw0 {
+    border: none !important;
+}
+
+.tb_miui {
+    border-bottom: 3px solid #e9e9e9;
+}
+
+.mbw {
+    margin-bottom: 20px !important;
+}
+#draftlist_menu {
+    margin-top: -1px;
+    padding: 10px;
+    border: 1px solid #DDD;
+    background: #FEFEFE;
+}
+div {
+    display: block;
+}
+.pbt {
+    margin-bottom: 10px;
+}
+.ps, select {
+    padding: 2px 2px 2px 1px;
+}
+.px, .pt, .ps, select {
+    border: 1px solid;
+    border-color: #848484 #E0E0E0 #E0E0E0 #848484;
+    background: #FFF url(../images/post/px.png) repeat-x 0 0;
+
+}
+.ftid_miui_sel a {
+    float: left;
+    height: 31px;
+    padding-left: 10px;
+    background: url(../images/post/pub_post_bg.png) no-repeat 0px -96px;
+    border-radius: 5px;
+    line-height: 31px;
+    margin-top: 8px;
+    outline: none;
+}
+
+a {
+    color: #8F8F8F;
+    text-decoration: none;
+}
+* {
+    word-wrap: break-word;
+}
+.z {
+    float: left;
+}
+#postbox .miui_bd {
+    border: 1px solid #dddcdc;
+    background: #ffffff;
+    height: 26px;
+    border-radius: 5px;
+    padding-left: 8px;
+}
+.edt .bbar, .edt .bbar a {
+    color: #999;
+}
+.edt .bbar {
+    border-top: 1px dashed #DDD;
+    text-align: right;
+    background: #fff;
+    padding: 10px 8px;
+    border-radius: 0 0 5px 5px;
+    line-height: 11px;
+}
+
+.edt .bbar em {
+    width: 200px;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    text-align: left;
+}
+
+
+#e_svd {
+    background-position: -160px -40px;
+}
+
+
+.edt .bbar, .edt .bbar a {
+    color: #999;
+}
+
+
+#e_rst {
+    background-position: -180px -40px;
+}
+
+
+#e_chck {
+    background-position: -100px -40px;
+}
+
+
+#e_tpr {
+    background-position: -80px -40px;
+}
+
+
+.edt .bbar img {
+    vertical-align: bottom;
+    cursor: row-resize;
+}
+
+.ptm {
+    padding-top: 10px !important;
+}
+
+
+#post_extra_tb {
+    position: relative;
+    z-index: 2;
+}
+
+
+#post_extra_tb label {
+    float: left;
+    margin-right: 5px;
+    height: 28px;
+    border: 1px solid;
+    border-color: #e9e9e9 #e6e6e6 #dedede #e8e8e8;
+    white-space: nowrap;
+    border-radius: 4px;
+    background-color: #ffffff;
+    width: 87px;
+}
+
+label {
+    cursor: pointer;
+}
+#post_extra_tb label span {
+    float: left;
+    line-height: 28px;
+    width: 100%;
+    text-align: center;
+}
+#post_extra_c {
+    position: relative;
+    z-index: 1;
+}
+#post_extra_c {
+    position: relative;
+    z-index: 1;
+}
+#post_extra_c .exfm {
+    margin: -1px 0 0;
+    border: 1px solid;
+    border-color: #e7e7e7 #e5e5e5 #dedede #e2e2e2;
+}
+#extra_additional_c {
+    border-radius: 0 5px 5px;
+}
+.exfm {
+    margin: 10px 0;
+    padding: 10px 14px;
+    border: 1px dashed #C2D5E3;
+    background: #FFFFFF;
+}
+.exfm {
+    border: 1px solid #dddcdc !important;
+    border-radius: 5px;
+}
+
+.exfm table {
+    width: 100%;
+}
+table {
+    empty-cells: show;
+    border-collapse: collapse;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+user agent stylesheet
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.exfm table th, .exfm table td {
+    padding: 4px 2px;
+}
+
+
+#extra_additional_c label {
+    float: left;
+    width: 16%;
+}
+
+
+#psd .bn .mbn input, #postbox input {
+    margin-right: 4px;
+}
+
+.pr, .pc {
+    vertical-align: middle;
+    margin: 0 5px 1px 0;
+    padding: 0;
+}
+.exfm table th, .exfm table td {
+     padding: 4px 2px;
+ }
+.exfm table th, .exfm table td {
+    padding: 4px 2px;
+}
+
+.xw1 {
+    font-weight: 700;
+}
+.mbm {
+    margin-bottom: 10px !important;
+}
+.mtm {
+    margin-top: 10px !important;
+}
+
+.pnpost a {
+    color: #3893eb;
+    margin-right: 10px;
+}
+
+.y {
+    float: right;
+}
+a {
+    color: #8F8F8F;
+    text-decoration: none;
+}
+#postbox .pnpost .mi_post, #postbox .pnpost .mi_save {
+    width: 144px;
+    height: 34px;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+#postbox .pnpost .mi_post {
+    background: #fc7050;
+}
+.pnpost .pn {
+    height: 26px;
+}
+.pnc, a.pnc {
+    border-color: #235994;
+    background-color: #4c9eed;
+    background-position: 0 -48px;
+    color: #FFF !important;
+}
+.pn {
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 3px;
+    padding: 0;
+    width: 68px;
+    height: 28px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.pn em, .pn span, .pn strong {
+    padding: 0px;
+    line-height: 20px;
+}
+.edt .bbar {
+    border-top: 1px dashed #DDD;
+    text-align: right;
+    background: #fff;
+    padding: 10px 8px;
+    border-radius: 0 0 5px 5px;
+    line-height: 11px;
+}
+.tb_miui .a, .tb_miui .current {
+    border-bottom: 3px solid #ff5f19;
+    margin-bottom: -3px;
+}
+.tb_miui li {
+    float: left;
+    padding: 9px 14px;
+}
+#postbox .pnpost .mi_post{
+    width: 144px;
+    height: 34px;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+#postbox .pnpost .mi_post {
+    background: #fc7050;
+}
+#scrolltop a {
+    display: block;
+    width: 37px;
+    height: 40px;
+    line-height: 12px;
+    text-align: center;
+    color: #787878;
+    text-decoration: none;
+    background: url(../images/post/scrolltop.png) no-repeat 0 0;
+    border-top: 0px #cdcdcd solid;
+}
+a.returnlist, a.returnboard {
+    background-position: 0 -80px !important;
+}
+#scrolltop a b {
+    visibility: hidden;
+    font-weight: normal;
+}
+.sltm {
+    padding: 5px 11px 5px 10px;
+    border: 1px solid #DDD;
+    background-color: #F7F7F7;
+    text-align: left;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 6px 24px -4px gray;
+    -moz-box-shadow: 0px 6px 24px -4px gray;
+    box-shadow: 0px 6px 24px -4px gray;
+}
+.sltm li.current {
+    color: #F26C4F;
+}
+.sltm li {
+    padding: 6px 0 2px;
+    color: #666;
+    cursor: pointer;
+}

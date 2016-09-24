@@ -1,0 +1,319 @@
+@CHARSET "UTF-8";
+body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc {
+    margin: 0;
+    padding: 0;
+}
+body, input, button, select, textarea {
+    font: 12px/1.5 Microsoft YaHei,Tahoma,Helvetica,'SimSun',sans-serif;
+    color: #444;
+}
+body {
+    background: #F7F7F7;
+    display: block;
+}
+* {
+    word-wrap: break-word;
+}
+#hd .wp, #wp {
+    min-width: 960px;
+}
+.wp {
+    width: 98%;
+    margin: 0 auto;
+}
+#pt {
+    margin: 0px;
+    height: 10px;
+    border: none;
+    background: transparent;
+    line-height: 36px;
+}
+.cl {
+    zoom: 1;
+}
+#pt .z {
+    padding-right: 10px;
+    line-height: 49px;
+}
+.z {
+    float: left;
+}
+#pt .z a, #pt .z em {
+    float: left;
+    height: 49px;
+    font-size: 12px;
+    margin-left: 0px;
+    line-height: 49px;
+}
+.nvhm {
+    width: 16px;
+    background: url(../images/homepage/imghack.png) no-repeat -320px 18px;
+    line-height: 200px !important;
+    overflow: hidden;
+}
+a {
+    color: #8F8F8F;
+    text-decoration: none;
+}
+#pt .z em {
+    width: 20px;
+    background: url(../images/homepage/imghack.png) no-repeat -336px 21px;
+    line-height: 200px;
+    overflow: hidden;
+}
+em, cite, i {
+    font-style: normal;
+}
+.cl:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#wp .wp {
+    width: auto;
+    clear: both;
+}
+#ct {
+    min-height: 300px;
+}
+.ct2_a {
+    padding-left: 150px;
+}
+.ct2_a, .ct3_a {
+    margin-bottom: 30px;
+}
+.ct2_a .mn {
+    width: 93%;
+}
+.ct2_a .mn {
+    display: inline;
+    padding: 5px 16px;
+    float: right;
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+}
+.mn {
+    overflow: hidden;
+}
+.bw0 {
+    background: transparent;
+    border: none !important;
+}
+.bm, .bn {
+    margin-bottom: 10px;
+}
+.ct2_a h1.mt {
+    display: none;
+}
+.mt {
+    padding: 10px 0;
+    font-size: 14px;
+}
+.tb2 {
+    border-bottom: 2px solid #e9e9e9;
+}
+.tb2 .a {
+    border-bottom: 2px solid #ff5f19;
+    margin-bottom: -2px;
+}
+.tb2 li {
+    float: left;
+    padding: 9px 14px;
+}
+ul li, .xl li {
+    list-style: none;
+}
+.tb2 .a a {
+    color: #000000;
+    font-weight: bold;
+}
+#profilelist {
+    width: 95%;
+}
+#profilelist {
+    font-size: 12px;
+    color: #737373;
+    margin: 10px 0px 0px 0px;
+}
+table {
+    empty-cells: show;
+    border-collapse: collapse;
+}
+#profilelist .profile_item, #td_field3, #td_field4, .profile_uname {
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+}
+.tfm th {
+    width: 70px;
+    padding-top: 7px;
+    padding-right: 5px;
+}
+.tfm caption, .tfm th, .tfm td {
+    vertical-align: top;
+    padding: 7px 0;
+}
+.profile_item {
+    color: #737373;
+}
+caption, th {
+    text-align: left;
+    font-weight: 400;
+}
+.profile_uname {
+    color: #b8b8b8;
+}
+.tfm .p {
+    text-align: right;
+}
+.ftid_spacecp_prav, .ftid_spacecp_level1, .ftid_spacecp_level2, .ftid_spacecp_level3, .ftid_spacecp_levels {
+    display: inline-block;
+}
+#profilelist .px, #profilelist select {
+    border: 1px solid #e0dfdf;
+    height: 28px;
+    background: none;
+    border-radius: 5px;
+}
+.ps, select {
+    padding: 2px 2px 2px 1px;
+}
+.ftid_spacecp_prav a {
+    text-align: left;
+    float: left;
+    height: 31px;
+    padding-left: 10px;
+    background: url(../images/post/pub_post_bg.png) no-repeat 0px -189px;
+    border-radius: 5px;
+    line-height: 31px;
+    font-weight: normal;
+    width: 60px !important;
+}
+.ftid_spacecp_levels a {
+    text-align: left;
+    float: left;
+    height: 31px;
+    padding-left: 10px;
+    background: url(../images/post/pub_post_bg.png) no-repeat 0px -219px;
+    border-radius: 5px;
+    line-height: 31px;
+    font-weight: normal;
+    width: 52px !important;
+}
+.ftid_spacecp_level3 a {
+    text-align: left;
+    float: left;
+    height: 31px;
+    padding-left: 10px;
+    background: url(../images/post/pub_post_bg.png) no-repeat 0px -64px;
+    border-radius: 5px;
+    line-height: 31px;
+    font-weight: normal;
+    width: 111px !important;
+}
+.rq {
+    color: red;
+}
+.mtn {
+    margin-top: 5px !important;
+}
+.tfm .d {
+    clear: both;
+    margin: 5px 0;
+    color: #999;
+}
+#profilelist .px {
+    width: 390px;
+}
+.px, .pt {
+    padding: 2px 4px;
+    line-height: 17px;
+}
+.px {
+    margin-left: 0px;
+}
+caption, th {
+    text-align: left;
+    font-weight: 400;
+}
+.pn3 {
+    width: 88px;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 3px;
+    padding: 0;
+    height: 35px;
+    border: 0px solid #999;
+    cursor: pointer;
+    box-shadow: 0 1px 0 #E5E5E5;
+}
+.ct2_a .appl {
+    margin-left: -150px;
+}
+.appl {
+    float: left;
+    overflow: hidden;
+    margin-bottom: 10px;
+    width: 115px;
+}
+.tbn {
+    margin: -4px 0px 0;
+}
+.tbn .mt {
+    padding: 0 0 10px 0;
+    font-size: 24px;
+    border-bottom: 2px solid #e0e0e0;
+}
+.tbn ul {
+    margin: 0;
+}
+.tbn li {
+    height: 42px;
+    margin: 0px 0 0;
+    line-height: 42px;
+    border-bottom: 1px solid #ececec;
+    font-size: 12px;
+}
+.appl li {
+    display: block;
+    white-space: nowrap;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.miui_spacecp span {
+    display: block;
+    float: left;
+    width: 13px;
+    height: 12px;
+    margin: 14px 5px 0 0;
+    background: url(../images/setup/spacecp_tab_bg.png) no-repeat;
+}
+.appl span {
+    font-size: 12px;
+}
+.tbn ul a {
+    display: block;
+    height: 41px;
+    line-height: 41px;
+}
+.tbn li a {
+    color: #000000;
+}
+.appl li a {
+    text-decoration: none !important;
+}
+.tbn li.a {
+    margin: 0px 0 0;
+    border-top: 0px solid #CDCDCD;
+    border-bottom-style: solid;
+}
+.miui_spacecp ul .a span {
+    background-position-y: -14px;
+}
+.tbn li.a a {
+    color: #e0561b;
+}

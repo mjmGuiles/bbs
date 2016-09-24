@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbs.dao.ThemeDao">
+  <resultMap id="ThemeResultMap" type="com.bbs.entity.Theme">
+    <id column="THEME_ID" jdbcType="DECIMAL" property="themeId" />
+    <result column="SECTION_ID" jdbcType="DECIMAL" property="sectionId" />
+    <result column="THEME_NAME" jdbcType="VARCHAR" property="themeName" />
+    <collection property="post"  ofType="com.bbs.entity.Post">
+    </collection>
+  </resultMap>
+  <resultMap id="PostResultMap" type="com.bbs.entity.Post">
+    <id column="POST_ID" jdbcType="DECIMAL" property="postId" />
+    <result column="POST_HEADER" jdbcType="VARCHAR" property="postHeader" />
+    <result column="POST_CONTENT" jdbcType="VARCHAR" property="postContent" />
+    <result column="POST_TIME" jdbcType="DATE" property="postTime" />
+    <result column="READ_COUNT" jdbcType="DECIMAL" property="readCount" />
+    <result column="REPLY_COUNT" jdbcType="DECIMAL" property="replyCount" />
+    <result column="IS_TOP" jdbcType="VARCHAR" property="isTop" />
+    <result column="IS_ELITE" jdbcType="VARCHAR" property="isElite" />
+    <result column="IS_DELETE" jdbcType="VARCHAR" property="isDelete" />
+    <result column="DELETE_TIME" jdbcType="DATE" property="deleteTime" />
+    <result column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="POST_IMG" jdbcType="VARCHAR" property="postImg" />
+    <result column="POST_SUMMARY" jdbcType="VARCHAR" property="postSummary" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    THEME_ID, SECTION_ID, THEME_NAME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ThemeResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from BBS.BBS_THEME
+    where THEME_ID = #{themeId,jdbcType=DECIMAL}
+  </select>
+  <select id="getThemeBySection1" resultMap="ThemeResultMap">
+  select *from bbs_theme where section_id = 1
+  </select>
+  <select id="getThemeBySection2" resultMap="ThemeResultMap">
+  select *from bbs_theme where section_id = 2
+  </select>
+  <select id="getThemeBySection3" resultMap="ThemeResultMap">
+  select *from bbs_theme where section_id = 3
+  </select>
+  <select id="getThemeBySection4" resultMap="ThemeResultMap">
+  select *from bbs_theme where section_id = 4
+  </select>
+  <select id="getThemeBySection5" resultMap="ThemeResultMap">
+  select *from bbs_theme where section_id = 5
+  </select>
+  <select id="getListByTheme" parameterType="java.lang.Integer" resultMap="ThemeResultMap">
+          select p.post_header,p.post_id pid,p.post_time,t.theme_name,p.theme_id 
+              from bbs_theme t,bbs_post p where p.theme_id =t.theme_id
+              and  t.theme_id = #{themeId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from BBS.BBS_THEME
+    where THEME_ID = #{themeId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.bbs.entity.Theme">
+    insert into BBS.BBS_THEME (THEME_ID, SECTION_ID, THEME_NAME
+      )
+    values (#{themeId,jdbcType=DECIMAL}, #{sectionId,jdbcType=DECIMAL}, #{themeName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bbs.entity.Theme">
+    insert into BBS.BBS_THEME
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="themeId != null">
+        THEME_ID,
+      </if>
+      <if test="sectionId != null">
+        SECTION_ID,
+      </if>
+      <if test="themeName != null">
+        THEME_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="themeId != null">
+        #{themeId,jdbcType=DECIMAL},
+      </if>
+      <if test="sectionId != null">
+        #{sectionId,jdbcType=DECIMAL},
+      </if>
+      <if test="themeName != null">
+        #{themeName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bbs.entity.Theme">
+    update BBS.BBS_THEME
+    <set>
+      <if test="sectionId != null">
+        SECTION_ID = #{sectionId,jdbcType=DECIMAL},
+      </if>
+      <if test="themeName != null">
+        THEME_NAME = #{themeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where THEME_ID = #{themeId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bbs.entity.Theme">
+    update BBS.BBS_THEME
+    set SECTION_ID = #{sectionId,jdbcType=DECIMAL},
+      THEME_NAME = #{themeName,jdbcType=VARCHAR}
+    where THEME_ID = #{themeId,jdbcType=DECIMAL}
+  </update>
+</mapper>
