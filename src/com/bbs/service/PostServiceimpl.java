@@ -35,6 +35,18 @@ public class PostServiceimpl implements PostService {
 		// TODO Auto-generated method stub
 		return pd.getHotPost();
 	}
+
+	@Override
+	public List<Post> searchPost(Post post) {
+		// TODO Auto-generated method stub
+		return pd.searchPost(post);
+	}
+
+	@Override
+	public int searchPostCount(Post post) {
+		// TODO Auto-generated method stub
+		return pd.searchPostCount(post);
+	}
 	
 
 }

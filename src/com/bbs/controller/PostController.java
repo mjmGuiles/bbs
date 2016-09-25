@@ -80,4 +80,42 @@ public class PostController {
 		return "homepage";
 		
 	}
+	//ËÑË÷Ò³
+	@RequestMapping("search")
+	public String search(Post post,Model model,String postContent,String p,HttpSession session){
+		if(post != null&&!"".equals(postContent)){
+			int pageIndex=1;
+			int pageSize = 5;
+			post.setPostContent(postContent); 
+		    if(p != null&&!"".equals(p)){
+		    	pageIndex = Integer.parseInt(p);
+		    }else if(p == null&&"".equals(p)){
+		    	pageIndex = 1;
+		    }
+		    int searchPostCount = ps.searchPostCount(post);
+			int pageCount = 0;
+			if(searchPostCount%pageSize ==0){
+				pageCount = searchPostCount%pageSize;
+			}else{
+				pageCount = searchPostCount%pageSize+1;
+			}
+			int startNumber = (pageIndex-1)*pageSize;
+			int endNumber = pageIndex*pageSize;
+			int upIndex = pageIndex<=1?1:pageIndex-1;
+			int nextIndex = pageIndex>=pageCount?pageCount:pageIndex+1; 
+			List<Post> searchPostList = ps.searchPost(post);
+			model.addAttribute("nextIndex", nextIndex);
+			model.addAttribute("upIndex", upIndex);
+			model.addAttribute("pageSize", pageSize);
+			model.addAttribute("startNumber", startNumber);
+			model.addAttribute("endNumber", endNumber);
+			model.addAttribute("pageCount", pageCount);
+			model.addAttribute("searchPostCount", searchPostCount);
+			model.addAttribute("searchPostList", searchPostList);
+			session.setAttribute("postContent", postContent);
+			return "yessearch";
+		}else{
+		    return "nosearch";
+		}
+	}
 }

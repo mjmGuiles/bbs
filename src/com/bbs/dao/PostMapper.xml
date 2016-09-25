@@ -69,6 +69,14 @@
   <select id="getAllPost" resultMap="PostResultMap">
     select *from bbs_post p,bbs_user u,bbs_theme t where p.user_id =u.user_id and p.theme_id = t.theme_id order by post_time desc
   </select>
+  <select id="searchPostCount" resultType="java.lang.Integer" parameterType="com.bbs.entity.Post">
+  select count(*) from bbs_post where post_content like '%'||#{postContent,jdbcType=VARCHAR}||'%'
+  or post_header like '%'||#{postContent,jdbcType=VARCHAR}||'%'
+  </select>
+  <select id="searchPost" resultMap="PostResultMap" parameterType="com.bbs.entity.Post">
+  select * from bbs_post where post_content like '%'||#{postContent,jdbcType=VARCHAR}||'%'
+  or post_header like '%'||#{postContent,jdbcType=VARCHAR}||'%'
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from BBS.BBS_POST
     where POST_ID = #{postId,jdbcType=DECIMAL}

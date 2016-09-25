@@ -7,9 +7,24 @@
     <meta charset="UTF-8">
     <title>search</title>
     <link href="css/BBS_search.css" rel="stylesheet">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/jQuery-1.7.1.js"></script>
+    <link rel="stylesheet" href="css/login.css" media="all">
+    <script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function($) {
+	$('.theme-login').click(function(){
+	$('.theme-popover-mask').fadeIn(100);
+	$('.theme-popover').slideDown(200);
+	})
+	$('.theme-poptit .close').click(function(){
+	$('.theme-popover-mask').fadeOut(100);
+	$('.theme-popover').slideUp(200);
+	})
+	
+	})
+	</script>
 </head>
-<script src="js/jquery-3.1.0.min.js"></script>
-<script src="js/jQuery-1.7.1.js"></script>
 <script>
     //负责给标签绑定事件
     $(function(){
@@ -42,6 +57,23 @@
     })
 </script>
 <body id="nv_search" onkeydown="if(event.keyCode==27) return false;">
+<div class="theme-popover">
+<div class="theme-poptit">
+<a href="javascript:;" title="关闭" class="close">×</a>
+<h3>登录 是一种态度</h3>
+</div>
+<div class="theme-popbod dform">
+<form class="theme-signin" name="loginform" action="login" method="post">
+<ol>
+<li><h4>你必须先登录！要不怎么发言!</h4></li>
+<li><strong>用户名：</strong><input class="ipt" type="text" name="userName" placeholder="输入用户名" size="20" /></li>
+<li><strong>密码：</strong><input class="ipt" type="password" name="userPassword" placeholder="输入您的密码" size="20" /></li>
+<li><input class="btn btn-primary" type="submit" name="submit" value=" 登 录 " /><a href="#" class="btn btn-primary" >注 册</a></li>
+</ol>
+</form>
+</div>
+</div>
+<div class="theme-popover-mask"></div>
 <div id="append_parent"></div><div id="ajaxwaitid"></div>
 <div id="toptb" class="cl">
     <div class="z" style="display:none;">
@@ -51,10 +83,16 @@
         <a href="forum.php"><b>返回论坛</b></a>
     </div>
     <div class="y">
-        <strong><a href="home.php?mod=space" target="_blank" title="访问我的空间">卡塞马拉</a></strong>
-        <a href="javascript:;" id="myspace" class="showmenu xi2" onclick="document.getElementById('myspace_menu').style.display=document.getElementById('myspace_menu').style.display=='block' ? 'none':'block';">快捷导航</a>
-        <a href="home.php?mod=spacecp">设置</a>
-        <a href="member.php?mod=logging&amp;action=logout&amp;formhash=07b25dc7">退出</a>
+    <c:if test="${!empty user }">
+        <strong><a href="" target="_blank" title="访问我的空间">${user.userName }</a></strong>
+        <a href="javascript:;" id="myspace" class="showmenu xi2" onmouseover="showMenu(this.id);" initialized="true" onclick="document.getElementById('myspace_menu').style.display=document.getElementById('myspace_menu').style.display=='block' ? 'none':'block';">快捷导航</a>
+        <a href="setup">设置</a>
+        <a href="quit">退出</a>
+        </c:if>
+        <c:if test="${empty user }">
+        <a href="">注册</a>
+        <a class="theme-login">登录</a>
+        </c:if>
     </div>
 </div>
 <div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div>

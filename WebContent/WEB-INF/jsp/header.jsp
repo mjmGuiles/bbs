@@ -149,7 +149,7 @@ MIUI官网
 <input type="hidden" name="srchtype" value="title">
 <input type="hidden" name="srhfid" value="0">
 <input type="hidden" name="srhlocality" value="forum::newindex">
-<input type="text" name="srchtxt" id="scbar_txt" autocomplete="off" placeholder="搜索">
+<input type="text" name="postContent" id="scbar_txt" autocomplete="off" placeholder="搜索">
 <input type="submit" name="searchsubmit" id="scbar_submit" value="1">
 <script type="text/javascript">
 MIUI_initSearchmenu('scbar', '');

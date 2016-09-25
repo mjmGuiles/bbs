@@ -12,4 +12,8 @@ public interface PostService {
     List<Post> getPost();
 	    
 	List<Post> getHotPost();
+	
+	List<Post> searchPost(Post post);
+	
+	int searchPostCount(Post post);
 }

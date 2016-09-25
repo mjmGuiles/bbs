@@ -365,6 +365,12 @@ pg a.nxt {
 .pg a.nxt, .pgb a {
     padding: 0 10px;
 }
+pg a.pre {
+    padding-right: 10px;
+}
+.pg a.pre, .pgb a {
+    padding: 0 10px;
+}
 #nv_search #ft {
     text-align: center;
 }

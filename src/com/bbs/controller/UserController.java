@@ -21,26 +21,6 @@ public class UserController {
 	public String goHomepage(){
 		return "redirect:/getPost";	
 	}
-	//搜索页
-	@RequestMapping("search")
-	public String search(String srchtxt,Model model){
-		if(srchtxt != ""){
-			return "redirect:/yes";
-		}else{
-		    return "redirect:/no";
-		}
-	}
-	//有内容搜索
-	@RequestMapping("yes")
-	public String yessearch(){
-		return "yessearch";
-		
-	}
-	//无内容搜索
-	@RequestMapping("no")
-	public String nosearch(){
-		return "nosearch";	
-	}
 	//发表帖子页
 	@RequestMapping("post")
 	public String post(){
@@ -52,7 +32,7 @@ public class UserController {
 	    User user = us.findUser(users);
 		if(user != null){
 			session.setAttribute("user", user);
-			return "homepage";
+			return "redirect:/getPost";
 		}else{
 			return "reditect:/index";
 		}
