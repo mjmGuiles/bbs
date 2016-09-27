@@ -89,7 +89,7 @@
 </ul>
 <div id="ct" class="cl w">
     <div class="mw">
-        <form class="searchform" method="post" autocomplete="off" action="" onsubmit="if($('scform_srchtxt')) searchFocus($('scform_srchtxt'));">
+        <form class="searchform" method="post" autocomplete="off" action="search" onsubmit="if($('scform_srchtxt')) searchFocus($('scform_srchtxt'));">
             <input type="hidden" name="formhash" value="07b25dc7">
             <table id="scform" class="mbm" cellspacing="0" cellpadding="0">
                 <tbody>
@@ -110,7 +110,7 @@
                             <tbody></tbody>
                             <tr>
                                 <td class="td_srchtxt">
-                                    <input type="text" id="scform_srchtxt" name="srchtxt" size="45" maxlength="40" value="${postContent }" tabindex="1" x-webkit-speech="" speech="" class=" xg1" placeholder="请输入搜索内容">
+                                    <input type="text" id="scform_srchtxt" name="postContent" size="45" maxlength="40" value="${postContent }" tabindex="1" x-webkit-speech="" speech="" class=" xg1" placeholder="请输入搜索内容">
                                     <script type="text/javascript">initSearchmenu('scform_srchtxt');$('scform_srchtxt').focus();</script>
                                 </td>
                                 <td class="td_srchbtn">

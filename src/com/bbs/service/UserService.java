@@ -22,4 +22,10 @@ public interface UserService {
     int deleteFriend(Integer userId);
     
     String getEmail(Integer userId);
+    
+    List<User> getAllUser();
+    
+    int insertSelective(User record);
+    
+    int updateByPrimaryKeySelective(User user);
 }

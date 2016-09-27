@@ -68,4 +68,22 @@ public class UserServiceimpl implements UserService {
 		return ud.getEmail(userId);
 	}
 
+	@Override
+	public List<User> getAllUser() {
+		// TODO Auto-generated method stub
+		return ud.getAllUser();
+	}
+
+	@Override
+	public int insertSelective(User record) {
+		// TODO Auto-generated method stub
+		return ud.insertSelective(record);
+	}
+
+	@Override
+	public int updateByPrimaryKeySelective(User user) {
+		// TODO Auto-generated method stub
+		return ud.updateByPrimaryKeySelective(user);
+	}
+
 }

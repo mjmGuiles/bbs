@@ -31,6 +31,9 @@
     from BBS.BBS_USER
     where USER_ID = #{userId,jdbcType=DECIMAL}
   </select>
+  <select id="getAllUser" resultMap="UserResultMap">
+  select *from bbs_user
+  </select>
   <select id="getAllFriend" parameterType="java.lang.Integer" resultMap="UserResultMap">
   select *from bbs_user where user_id in (select fri_id from bbs_friend where USER_ID = #{userId,jdbcType=DECIMAL})
   </select>
@@ -51,13 +54,13 @@
     where USER_ID = #{userId,jdbcType=DECIMAL}
   </delete>
   <insert id="insert" parameterType="com.bbs.entity.User">
-    insert into BBS.BBS_USER (USER_ID, USER_NAME, USER_EMAIL, 
+    insert into BBS.BBS_USER (USER_NAME, USER_EMAIL, 
       REG_TIME, LOGIN_TIME, POST_NUM, 
       ELITEPOST_NUM, USER_TYPE, USER_GENDER, 
       USER_BIRTH, USER_NATIVEPLACE, USER_QQ, 
       USER_SIGNNATIVE, USER_HEADER, USER_INTEGRAL, 
       USER_PHONE, USER_PASSWORD)
-    values (#{userId,jdbcType=DECIMAL}, #{userName,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, 
+    values (#{userName,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, 
       #{regTime,jdbcType=DATE}, #{loginTime,jdbcType=DATE}, #{postNum,jdbcType=DECIMAL}, 
       #{elitepostNum,jdbcType=DECIMAL}, #{userType,jdbcType=VARCHAR}, #{userGender,jdbcType=VARCHAR}, 
       #{userBirth,jdbcType=DATE}, #{userNativeplace,jdbcType=VARCHAR}, #{userQq,jdbcType=VARCHAR}, 
@@ -67,9 +70,6 @@
   <insert id="insertSelective" parameterType="com.bbs.entity.User">
     insert into BBS.BBS_USER
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userId != null">
-        USER_ID,
-      </if>
       <if test="userName != null">
         USER_NAME,
       </if>
@@ -120,9 +120,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userId != null">
-        #{userId,jdbcType=DECIMAL},
-      </if>
       <if test="userName != null">
         #{userName,jdbcType=VARCHAR},
       </if>
@@ -200,7 +197,7 @@
       <if test="userGender != null">
         USER_GENDER = #{userGender,jdbcType=VARCHAR},
       </if>
-      <if test="userBirth != null">
+       <if test="userBirth != null">
         USER_BIRTH = #{userBirth,jdbcType=DATE},
       </if>
       <if test="userNativeplace != null">

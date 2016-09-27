@@ -96,50 +96,75 @@
     </div>
 </div>
 <div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div>
-<ul class="p_pop h_pop" id="navs_menu" style="display: none">            <li id="mn_Neacf"><a href="index.html" hidefocus="true">首页</a></li>            <li id="mn_forum"><a href="forum.php" hidefocus="true">新帖</a></li>            <li id="mn_N30f4"><a href="forum.php?forumlist=1" hidefocus="true">版块</a></li>            <li id="mn_N8e4f"><a href="gid-19.html" hidefocus="true" title="MIUI">MIUI专区<span>MIUI</span></a></li>            <li id="mn_N8a77"><a href="gid-20.html" hidefocus="true" title="Share">资源分享<span>Share</span></a></li>            <li id="mn_Nef49"><a href="gid-14.html" hidefocus="true" title="Chat">谈天说地<span>Chat</span></a></li>            <li id="mn_group"><a href="group.php" hidefocus="true" title="Club">俱乐部<span>Club</span></a></li>            <li id="mn_N06f4"><a href="http://geek.miui.com" hidefocus="true" title="Geek">极客秀<span>Geek</span></a></li>            <li id="mn_N75f3"><a href="download.html" hidefocus="true" title="Download">MIUI下载<span>Download</span></a></li>                        <li id="mn_N21c3"><a href="extra.php?mod=signcard/index" hidefocus="true">四格报告</a></li>                                                                                                            <li id="mn_N077a"><a href="http://api.bbs.miui.com/app/index/downloadApp?fromdaohang" hidefocus="true" target="_blank">论坛APP</a></li></ul>
+<ul class="p_pop h_pop" id="navs_menu" style="display: none">
+  <li id="mn_Neacf"><a href="" >首页</a></li>           
+  <li id="mn_forum"><a href="" >新帖</a></li>            
+  <li id="mn_N30f4"><a href="" >版块</a></li>    
+  <li id="mn_N8e4f"><a href="" title="MIUI">MIUI专区<span>MIUI</span></a></li>
+  <li id="mn_N8a77"><a href="" title="Share">资源分享<span>Share</span></a></li> 
+  <li id="mn_Nef49"><a href="" title="Chat">谈天说地<span>Chat</span></a></li>
+  <li id="mn_group"><a href="" title="Club">俱乐部<span>Club</span></a></li>
+  <li id="mn_N06f4"><a href="" title="Geek">极客秀<span>Geek</span></a></li> 
+  <li id="mn_N75f3"><a href="" title="Download">MIUI下载<span>Download</span></a></li>              
+  <li id="mn_N21c3"><a href="">四格报告</a></li>                                               
+  <li id="mn_N077a"><a href="" target="_blank">论坛APP</a></li>
+</ul>
 
-<ul id="myspace_menu" class="p_pop" style="position: absolute; z-index: 301;left: 1045px;top: 28px;display: none;"><li><a href="forum.php?mod=guide&amp;view=my" style="background-image:url(http://www.miui.com/static//image/miui/base/feed/thread_b.png) !important">帖子</a></li>
-    <li><a href="home.php?mod=space&amp;do=friend" style="background-image:url(http://www.miui.com/static//image/miui/base/feed/friend_b.png) !important">好友</a></li>
-    <li><a href="home.php?mod=space&amp;do=album" style="background-image:url(http://www.miui.com/static//image/miui/base/feed/album_b.png) !important">相册</a></li>
-    <li><a href="home.php?mod=medal" style="background-image:url(http://www.miui.com/static//image/miui/base/feed/medal_b.png) !important">勋章</a></li>
-    <li><a href="home.php?mod=space&amp;do=favorite&amp;view=me" style="background-image:url(http://www.miui.com/static//image/miui/base/feed/favorite_b.png) !important">收藏</a></li>
-    <li><a href="home.php?mod=task" style="background-image:url(http://www.miui.com/static//image/miui/base/feed/task_b.png) !important">任务</a></li>
-    <li><a href="misc.php?mod=ranklist" style="background-image:url(http://www.miui.com/static//image/miui/base/feed/ranklist_b.png) !important">排行</a></li>
-    <li><a href="shop.html" title="积分商城" style="background-image:url(http://attach.bbs.miui.com/common/cf/153141sa6lrbht6l55ibam.png?Jxh7q9) !important">商城</a></li>
+<ul id="myspace_menu" class="p_pop" style="position: absolute; z-index: 301;left: 1045px;top: 28px;display: none;"><li><a href="forum.php?mod=guide&amp;view=my" style="background-image:url(images/homepage/thread_b.png) !important">帖子</a></li>
+    <li><a href="" style="background-image:url(images/homepage/friend_b.png) !important">好友</a></li>
+    <li><a href="" style="background-image:url(images/homepage/album_b.png) !important">相册</a></li>
+    <li><a href="" style="background-image:url(images/homepage/medal_b.png) !important">勋章</a></li>
+    <li><a href="" style="background-image:url(images/homepage/favorite_b.png) !important">收藏</a></li>
+    <li><a href="" style="background-image:url(images/homepage/task_b.png) !important">任务</a></li>
+    <li><a href="" style="background-image:url(images/homepage/ranklist_b.png) !important">排行</a></li>
+    <li><a href="" title="积分商城" style="background-image:url(images/homepage/153141sa6lrbht6l55ibam.png?Jxh7q9) !important">商城</a></li>
 </ul><div id="ct" class="cl w">
     <div class="mw">
-        <form class="searchform" method="post" autocomplete="off" action="search.php?mod=forum" onsubmit="if($('scform_srchtxt')) searchFocus($('scform_srchtxt'));">
-            <input type="hidden" name="formhash" value="07b25dc7"><div class="hm mtw ptw pbw"><h1 class="mtw ptw"><a href="./search.php" title="MIUI论坛"><img src="images/nosearch/logo_sc.png" alt="MIUI论坛"></a></h1></div>
+        <form class="searchform" method="post" autocomplete="off" action="search" onsubmit="if($('scform_srchtxt')) searchFocus($('scform_srchtxt'));">
+            <input type="hidden" name="formhash" value="07b25dc7">
+            <div class="hm mtw ptw pbw">
+            <h1 class="mtw ptw">
+            <a href="" title="MIUI论坛">
+            <img src="images/nosearch/logo_sc.png" alt="MIUI论坛">
+            </a>
+            </h1>
+            </div>
             <table id="scform" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
                 <tbody><tr>
                     <td id="scform_tb" class="xs2">
-<span class="y xs1" style="margin-right:110px;">
-<a href="javascript:;" id="quick_sch" class="showmenu" onclick="document.getElementById('quick_sch_menu').style.display=document.getElementById('quick_sch_menu').style.display=='block' ? 'none':'block';">快速</a>
-<a href="search.php?mod=forum&amp;adv=yes">高级</a>
-</span>
-                        <a href="search.php?mod=forum" class="a">帖子</a><a href="search.php?mod=user">用户</a>
+                        <span class="y xs1" style="margin-right:110px;">
+                         <a href="javascript:;" id="quick_sch" class="showmenu" onclick="document.getElementById('quick_sch_menu').style.display=document.getElementById('quick_sch_menu').style.display=='block' ? 'none':'block';">快速</a>
+                         <a href="search.php?mod=forum&amp;adv=yes">高级</a>
+                         </span>
+                        <a href="" class="a">帖子</a><a href="">用户</a>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <table cellspacing="0" cellpadding="0" id="scform_form">
                             <tbody><tr>
-                                <td class="td_srchtxt"><input type="text" id="scform_srchtxt" name="srchtxt" size="65" maxlength="40" value="" tabindex="1" class=" xg1" placeholder="请输入搜索内容"><script type="text/javascript">initSearchmenu('scform_srchtxt');$('scform_srchtxt').focus();</script></td>
-                                <td class="td_srchbtn"><input type="hidden" name="searchsubmit" value="yes"><button type="submit" id="scform_submit" value="true"><strong>搜索</strong></button></td>
+                                <td class="td_srchtxt">
+                                <input type="text" id="scform_srchtxt" name="postContent" size="65" maxlength="40" value="" tabindex="1" class=" xg1" placeholder="请输入搜索内容">
+                                </td>
+                                <td class="td_srchbtn"><input type="hidden" name="searchsubmit" value="yes">
+                                <button type="submit" id="scform_submit" value="true">
+                                <strong>搜索</strong>
+                                </button>
+                                </td>
                             </tr>
                             </tbody></table>
                     </td>
                 </tr>
                 </tbody></table>
             <ul id="quick_sch_menu" class="p_pop" style="position: absolute; z-index: 301;left: 778px;top: 205px;display: none;">
-                <li><a href="search.php?mod=forum&amp;srchfrom=3600&amp;searchsubmit=yes&amp;srchtxt=">1 小时以内的新帖</a></li>
-                <li><a href="search.php?mod=forum&amp;srchfrom=14400&amp;searchsubmit=yes&amp;srchtxt=">4 小时以内的新帖</a></li>
-                <li><a href="search.php?mod=forum&amp;srchfrom=28800&amp;searchsubmit=yes&amp;srchtxt=">8 小时以内的新帖</a></li>
-                <li><a href="search.php?mod=forum&amp;srchfrom=86400&amp;searchsubmit=yes&amp;srchtxt=">24 小时以内的新帖</a></li>
-                <li><a href="search.php?mod=forum&amp;srchfrom=604800&amp;searchsubmit=yes&amp;srchtxt=">1 周内帖子</a></li>
-                <li><a href="search.php?mod=forum&amp;srchfrom=2592000&amp;searchsubmit=yes&amp;srchtxt=">1 月内帖子</a></li>
-                <li><a href="search.php?mod=forum&amp;srchfrom=15552000&amp;searchsubmit=yes&amp;srchtxt=">6 月内帖子</a></li>
-                <li><a href="search.php?mod=forum&amp;srchfrom=31536000&amp;searchsubmit=yes&amp;srchtxt=">1 年内帖子</a></li>
+                <li><a href="">1 小时以内的新帖</a></li>
+                <li><a href="">4 小时以内的新帖</a></li>
+                <li><a href="">8 小时以内的新帖</a></li>
+                <li><a href="">24 小时以内的新帖</a></li>
+                <li><a href="">1 周内帖子</a></li>
+                <li><a href="">1 月内帖子</a></li>
+                <li><a href="">6 月内帖子</a></li>
+                <li><a href="">1 年内帖子</a></li>
             </ul>
         </form>
 
@@ -202,10 +227,9 @@
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
 
-        </script></div>
+        </script>
+        </div>
 </div>
-<script src="http://static.bbs.miui.com/static/js/footer_extend.js?do6" type="text/javascript"></script>
-<script src="home.php?mod=spacecp&amp;ac=pm&amp;op=checknewpm&amp;rand=1473669923" type="text/javascript"></script>
 <div id="discuz_tips" style="display:none;"></div>
 <script type="text/javascript">
     var tipsinfo = '10755402|X3|0.6||0||243748688|25|1473669923|f54d8d86fc9e53c49f9b007cd618ed8f|2';

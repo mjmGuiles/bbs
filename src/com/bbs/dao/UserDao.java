@@ -35,4 +35,8 @@ public interface UserDao {
     
     String getEmail(Integer userId);
     
+    List<User> getAllUser();
+    
+    int deleteUser(Integer userId);
+    
 }

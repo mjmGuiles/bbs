@@ -1,13 +1,19 @@
 package com.bbs.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bbs.entity.User;
 import com.bbs.service.UserService;
@@ -130,6 +136,38 @@ public class UserController {
 		int df = us.deleteFriend(friId);
 		return "redirect:/perspace";
 	}
+	//jqueryEasyUI
+	//easyUI≤‚ ‘
+    @RequestMapping("getAllUsers")
+    @ResponseBody
+    public List<User> getAllUsers(){
+    	List<User> gau = us.getAllUser();
+		return gau;
+    	
+    }
+    @RequestMapping("addUser")
+    @ResponseBody
+    public int addUser(User user){
+    	int result = us.insertSelective(user);
+		return result;	
+    }
+    @RequestMapping("updateUser1")
+    @ResponseBody
+    public int updateUser1(User userId){
+    	int uu = us.updateByPrimaryKeySelective(userId);
+		return uu;
+    }
+    @InitBinder  
+    public void initBinder(ServletRequestDataBinder binder) {  
+        SimpleDateFormat dateFormat = new SimpleDateFormat(  
+                "yyyy-MM-dd HH:mm:ss");  
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(  
+                dateFormat, false));  
+    }  
+    @RequestMapping("test")
+    public String goTest(){
+    	return "JQueryEasyUI";
+    }
 }
 
 
